@@ -18,7 +18,7 @@ const MainLayout: React.FC = () => {
         {/* Right Content Area */}
         <div className="w-full md:w-2/3 flex flex-col min-h-screen">
           {/* Header */}
-          <header className="sticky top-0 z-50 h-[70px] bg-[#18181f] px-4 flex justify-center items-center">
+          <header className="sticky top-0 z-50 h-[70px] bg-[#18181f] px-4 flex justify-center items-center overflow-x-auto">
             <Header />
           </header>
 

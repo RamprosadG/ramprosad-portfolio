@@ -5,7 +5,7 @@ interface ProjectCardProps {
   image: string;
   liveLink: string;
   techStack: string[];
-  description: string;
+  description: string[]; // <-- changed from string to string[]
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -20,9 +20,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       <img
         src={image}
         alt={title}
-        className="w-full h-48 object-cover rounded-md mb-4"
+        className="w-full object-cover rounded-md mb-4"
       />
-      <div className="space-y-3">
+
+      <div className="space-y-4">
         <div className="flex justify-between items-center">
           <h4 className="text-lg font-semibold text-white">{title}</h4>
           <a
@@ -30,11 +31,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Live Project"
-            className="text-blue-400 hover:text-blue-300 text-xl"
           >
-            🔗
+            <button className="bg-gray-700 hover:bg-gray-600 cursor-pointer text-white px-3 py-1 text-sm rounded-md transition">
+              Live Project
+            </button>
           </a>
         </div>
+
         <div className="flex flex-wrap gap-2 text-sm">
           {techStack.map((tech, index) => (
             <span
@@ -45,7 +48,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             </span>
           ))}
         </div>
-        <p className="text-sm text-gray-300">{description}</p>
+
+        <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+          {description.map((point, idx) => (
+            <li key={idx}>{point}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );

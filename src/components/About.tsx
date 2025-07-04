@@ -1,79 +1,93 @@
 import React from "react";
-import ramprosadImg from "../assets/Ramprosad.jpg";
-import resumePDF from "../assets/Resume_Ramprosad_Gharami.pdf";
-import { RiHtml5Fill } from "react-icons/ri";
-import { FaDatabase } from "react-icons/fa6";
-import { FaHeadSideVirus } from "react-icons/fa";
-import { FaBrain } from "react-icons/fa";
+
+const services = [
+  {
+    title: "Backend",
+    description:
+      "Engineering secure, scalable, and high-performance server-side architectures that drive core application functionality and data integrity.",
+  },
+  {
+    title: "Front-end",
+    description:
+      "Designing intuitive, accessible, and responsive user interfaces with modern frameworks to deliver seamless digital experiences.",
+  },
+  {
+    title: "Custom Software",
+    description:
+      "Delivering bespoke software solutions tailored to specific business objectives, ensuring efficiency, flexibility, and long-term scalability.",
+  },
+  {
+    title: "Software Maintenance",
+    description:
+      "Providing proactive support, optimization, and iterative improvements to ensure application stability, security, and compliance with evolving requirements.",
+  },
+];
 
 const interests = [
-  { icon: <RiHtml5Fill size={30} />, label: "Web Development" },
-  { icon: <FaHeadSideVirus size={30} />, label: "Frontend Development" },
-  { icon: <FaDatabase size={30} />, label: "Backend Development" },
-  { icon: <FaHeadSideVirus size={30} />, label: "Machine Learning" },
-  { icon: <FaHeadSideVirus size={30} />, label: "Data Science" },
-  { icon: <FaHeadSideVirus size={30} />, label: "Web Hosting" },
-  { icon: <FaBrain size={30} />, label: "Problem Solving" },
-  { icon: <FaHeadSideVirus size={30} />, label: "Programming" },
+  "Competitive Programming",
+  "System Design",
+  "Open Source Contribution",
+  "Problem Solving",
+  "Clean Code & Architecture",
+  "Machine Learning",
 ];
 
 const About: React.FC = () => {
   return (
-    <div className="w-full py-2 flex justify-center items-center">
-      <div className="w-full flex flex-col items-center">
-        <h3 className="text-3xl font-semibold text-center mt-3">About</h3>
+    <div className="bg-primary text-white py-12">
+      <div className="w-full">
+        {/* About Me Section */}
+        <h2 className="text-xl md:text-2xl font-bold mb-8 text-center">
+          About Me
+        </h2>
+        <p className="text-gray-200 leading-relaxed text-lg mb-8 text-justify">
+          <strong>Hello! I'm Ramprosad Gharami.</strong>
+          <br />A Software Engineer and Competitive Programmer with a B.Sc. in
+          Computer Science from Gopalganj Science and Technology University. I
+          specialize in building full-stack web applications using modern
+          technologies like Node.js, React.js, Tailwind CSS, and MongoDB.
+          <br />
+          <br />
+          With a strong foundation in problem-solving and real-world
+          development, I've worked on projects ranging from real-time apps with
+          WebSockets to secure payment integrations (Paddle, UddoktaPay). I'm
+          passionate about clean, scalable code and continuous learning.
+          <br />
+          <br />
+          Beyond coding, I enjoy competitive programming, fast typing, and
+          engaging with tech communities. I'm always eager to collaborate on
+          impactful, challenging projects.
+        </p>
 
-        {/* Profile Image & Download */}
-        <div className="flex flex-col items-center mt-6 space-y-4">
-          <img
-            src={ramprosadImg}
-            alt="Ramprosad Gharami"
-            className="w-40 h-40 rounded-full object-cover shadow-lg"
-          />
-          <a
-            href={resumePDF}
-            download="Resume_Ramprosad_Gharami.pdf"
-            className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
-          >
-            Download Resume
-          </a>
-        </div>
-
-        {/* About Info */}
-        <div className="mt-10 text-justify w-full">
-          <p className="text-base w-full leading-relaxed text-gray-800">
-            I'm <strong>Ramprosad Gharami</strong>, a Software Engineer and
-            Competitive Programmer with a B.Sc. in Computer Science from
-            Gopalganj Science and Technology University. I specialize in
-            building full-stack web applications using modern technologies like{" "}
-            <strong>Node.js, Express.js, React, Next.js, and MongoDB</strong>.
-            <br />
-            <br />
-            With a strong foundation in problem-solving and real-world
-            development, I've worked on projects ranging from real-time apps
-            with WebSockets to secure payment integrations (Paddle, UddoktaPay).
-            I'm passionate about clean, scalable code and continuous learning.
-            <br />
-            <br />
-            Beyond coding, I enjoy competitive programming, fast typing, and
-            engaging with tech communities. I'm always eager to collaborate on
-            impactful, challenging projects.
-          </p>
+        {/* Services Section */}
+        <h3 className="text-2xl font-semibold mb-8 text-white text-center">
+          Services
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="bg-gray-800 text-gray-200 p-6 rounded-xl shadow-lg backdrop-blur-sm border border-white/10 transition"
+            >
+              <h4 className="text-lg font-semibold mb-2 text-white">
+                {service.title}
+              </h4>
+              <p className="text-sm">{service.description}</p>
+            </div>
+          ))}
         </div>
 
         {/* Interests Section */}
-        <h3 className="text-2xl font-semibold text-center mt-12 mb-6 text-blue-700">
+        <h3 className="text-2xl font-semibold mb-8 text-white text-center">
           Interests
         </h3>
-
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
-          {interests.map(({ icon, label }, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {interests.map((item, index) => (
             <div
               key={index}
-              className="flex items-center space-x-3 bg-white shadow px-4 py-3 rounded-lg transition hover:shadow-md"
+              className="bg-gray-800 text-white px-6 py-4 rounded-xl shadow-lg backdrop-blur-sm border border-white/10 text-sm"
             >
-              <div className="text-blue-600">{icon}</div>
-              <h4 className="text-base font-medium">{label}</h4>
+              {item}
             </div>
           ))}
         </div>

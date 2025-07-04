@@ -7,21 +7,21 @@ import ProgrammignContest from "./ProgrammingContest";
 import Contact from "./Contact";
 import ProblemSolving from "./ProblemSolving";
 import Education from "./Education";
-import Service from "./Service";
-import Language from "./Language";
+import Profile from "./Profile";
 
 const MainContent: React.FC = () => {
   return (
     <div className="w-full flex flex-col">
+      <section id="profile" className=" md:hidden">
+        <Profile />
+      </section>
       <section id="about" className="">
         <About />
-        <Service />
       </section>
       <section id="resume" className="">
         <Skills />
         <Experiences />
         <Education />
-        <Language />
       </section>
       <section id="projects" className="">
         <Projects />

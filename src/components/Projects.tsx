@@ -17,8 +17,13 @@ const projects = [
       "PostgreSQL",
       "Prisma",
     ],
-    description:
-      "A blog platform focused on competitive programming. Includes user registration, blog posting, comments, and admin dashboard for managing content and categories.",
+    description: [
+      "Developed a full-stack blogging platform centered around competitive programming topics.",
+      "Enabled secure user registration, authentication, and role-based access.",
+      "Implemented dynamic blog creation with Markdown support and comment functionality.",
+      "Built an admin dashboard for managing users, posts, and categories.",
+      "Used PostgreSQL and Prisma ORM for relational data modeling and querying.",
+    ],
   },
   {
     title: "Grocery Website",
@@ -32,28 +37,37 @@ const projects = [
       "MySQL",
       "Prisma",
     ],
-    description:
-      "An e-commerce platform for grocery shopping. Features user login, product browsing, order processing, payment integration, and admin panel.",
+    description: [
+      "Created an e-commerce platform for online grocery shopping with real-time order processing.",
+      "Integrated secure user authentication and customer profiles.",
+      "Implemented a dynamic product catalog with filtering, search, and category-based browsing.",
+      "Added payment gateway integration and order confirmation workflows.",
+      "Built admin dashboard to manage products, categories, and order fulfillment.",
+    ],
   },
   {
     title: "Portfolio",
     image: portfolioImg,
     liveLink: "https://ramprosadg.github.io/portfolio",
     techStack: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-    description:
-      "A responsive portfolio showcasing projects, skills, and experience. Designed for recruiters and collaborators to explore professional background.",
+    description: [
+      "Designed and developed a fully responsive personal portfolio site.",
+      "Showcases key projects, professional skills, achievements, and contact details.",
+      "Optimized for SEO and performance to ensure fast loading and visibility.",
+      "Built with mobile-first principles and accessible markup.",
+    ],
   },
 ];
 
 const Projects: React.FC = () => {
   return (
-    <div id="projects" className="py-12">
-      <div className="w-full px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">
+    <div id="projects" className="py-12 bg-primary text-white">
+      <div className="w-full max-w-7xl mx-auto">
+        <h2 className="text-xl md:text-2xl font-bold text-center mb-12">
           Projects
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects?.map((project, idx) => (
+        <div className="grid grid-cols-1 gap-8">
+          {projects.map((project, idx) => (
             <ProjectCard key={idx} {...project} />
           ))}
         </div>

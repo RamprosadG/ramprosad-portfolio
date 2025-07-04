@@ -1,7 +1,10 @@
 import React from "react";
+import Profile from "./Profile";
 
 const Sidebar: React.FC = () => {
-  return <div className="w-full bg-red-500">Sidebar</div>;
+  return <div className="">
+    <Profile />
+  </div>;
 };
 
 export default Sidebar;

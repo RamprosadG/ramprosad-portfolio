@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaFacebook, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -29,55 +30,57 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="py-16 flex justify-center items-center bg-[#0f172a] text-gray-300">
-      <div className="max-w-7xl w-full px-4">
-        <h5 className="text-3xl text-center font-semibold mb-10 text-white">
-          Contact
-        </h5>
+    <div className="py-16 flex justify-center items-center text-gray-300">
+      <div className="w-full">
+        <div className="text-3xl text-center font-semibold mb-10 text-white">
+          Contact Me
+        </div>
 
-        <div className="flex flex-col md:flex-row gap-10">
+        <div className="bg-gray-800 p-6 rounded-lg flex flex-col gap-10">
           {/* Form Section */}
-          <div className="w-full md:w-1/2">
+          <div className="w-full">
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label
-                  htmlFor="user-email"
-                  className="block mb-2 text-sm font-medium text-gray-400"
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="user_email"
-                  id="user-email"
-                  value={formData.user_email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-700 rounded-md bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Enter your email"
-                />
+              <div className="flex w-full flex-col md:flex-row justify-between gap-4">
+                <div className="w-full">
+                  <label
+                    htmlFor="user-email"
+                    className="block mb-2 text-sm font-medium text-gray-400"
+                  >
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    name="user_email"
+                    id="user-email"
+                    value={formData.user_email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-700 rounded-md bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Enter your email"
+                  />
+                </div>
+
+                <div className="w-full">
+                  <label
+                    htmlFor="user-name"
+                    className="block mb-2 text-sm font-medium text-gray-400"
+                  >
+                    Subject
+                  </label>
+                  <input
+                    type="text"
+                    name="user_name"
+                    id="user-name"
+                    value={formData.user_name}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-700 rounded-md bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Enter subject"
+                  />
+                </div>
               </div>
 
-              <div>
-                <label
-                  htmlFor="user-name"
-                  className="block mb-2 text-sm font-medium text-gray-400"
-                >
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  name="user_name"
-                  id="user-name"
-                  value={formData.user_name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-700 rounded-md bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Enter your name"
-                />
-              </div>
-
-              <div>
+              <div className="w-full">
                 <label
                   htmlFor="user-message"
                   className="block mb-2 text-sm font-medium text-gray-400"
@@ -98,10 +101,9 @@ const Contact: React.FC = () => {
 
               <button
                 type="submit"
-                className="mt-4 px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition inline-flex items-center gap-2"
+                className="mt-4 px-6 py-2 cursor-pointer bg-blue-600 text-white rounded hover:bg-blue-700 transition w-full justify-center flex items-center gap-2"
               >
-                Submit
-                <i className="ri-arrow-right-up-line"></i>
+                Send message
               </button>
             </form>
 
@@ -112,23 +114,42 @@ const Contact: React.FC = () => {
             )}
           </div>
 
+          <div className="w-full justify-center flex items-center gap-4 mt-4 text-2xl text-gray-300">
+            <a href="#" target="_blank" className="hover:text-cyan-400">
+              <FaLinkedin />
+            </a>
+            <a href="#" target="_blank" className="hover:text-cyan-400">
+              <FaGithub />
+            </a>
+            <a
+              href="https://wa.me/8801234567890"
+              target="_blank"
+              className="hover:text-cyan-400"
+            >
+              <FaWhatsapp />
+            </a>
+            <a href="#" target="_blank" className="hover:text-cyan-400">
+              <FaFacebook />
+            </a>
+          </div>
+
           {/* Contact Info Section */}
-          <div className="w-full md:w-1/2 space-y-6 text-right">
-            <div>
-              <h6 className="text-lg font-semibold text-white">Email</h6>
-              <p className="text-gray-400">ram.bsmrstu@gmail.com</p>
+          <div className="w-full flex flex-col justify-center items-center">
+            <div className="w-full text-center">
+              <span className="text-white">Email: ram.bsmrstu@gmail.com</span>
             </div>
-            <div>
-              <h6 className="text-lg font-semibold text-white">Phone</h6>
-              <p className="text-gray-400">+8801768157889</p>
+            <div className="w-full text-center">
+              <h6 className=" text-white">
+                Phone: +8801768157889, +8801568984650
+              </h6>
             </div>
-            <div>
-              <h6 className="text-lg font-semibold text-white">Address</h6>
-              <p className="text-gray-400">Rajoir, Madaridpur, Dhaka</p>
-              <p className="text-gray-400">Bangladesh</p>
+            <div className="w-full text-center">
+              <h6 className=" text-white">
+                Address: Madaripur, Dhaka, Bangladesh
+              </h6>
             </div>
 
-            <div>
+            {/* <div>
               <h6 className="text-lg font-semibold text-white">
                 Connect with me
               </h6>
@@ -175,7 +196,7 @@ const Contact: React.FC = () => {
                   ></span>
                 </a>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

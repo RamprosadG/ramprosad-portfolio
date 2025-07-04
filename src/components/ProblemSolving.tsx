@@ -1,11 +1,16 @@
 import React from "react";
+import codeforcesImage from "../assets/Codeforces.jpg";
+import codechefImage from "../assets/Codechef.png";
+import atcoderImg from "../assets/Atcoder.png";
+import leetcodeImage from "../assets/LeetCode.png";
+import stopTalkImage from "../assets/Stopstalk.png";
 
 const problemData = [
   {
     name: "Codeforces",
     handle: "Ramprosad",
     profileUrl: "https://codeforces.com/profile/Ramprosad",
-    image: "/content/Codeforces.jpg",
+    image: codeforcesImage,
     solving: "1970+",
     contest: "215+",
     rating: "1800",
@@ -16,7 +21,7 @@ const problemData = [
     name: "Codechef",
     handle: "ramprosadg",
     profileUrl: "https://www.codechef.com/users/ramprosadg",
-    image: "/content/Codechef.png",
+    image: codechefImage,
     solving: "147+",
     contest: "34+",
     rating: "1944",
@@ -27,7 +32,7 @@ const problemData = [
     name: "AtCoder",
     handle: "Ramprosad",
     profileUrl: "https://atcoder.jp/users/Ramprosad",
-    image: "/content/Atcoder.png",
+    image: atcoderImg,
     solving: "130+",
     contest: "30+",
     rating: "1101",
@@ -38,7 +43,7 @@ const problemData = [
     name: "LeetCode",
     handle: "Ramprosad",
     profileUrl: "https://leetcode.com/u/Ramprosad/",
-    image: "/content/LeetCode.png",
+    image: leetcodeImage,
     solving: "177+",
     contest: "17+",
     rating: "1896",
@@ -49,7 +54,7 @@ const problemData = [
     name: "StopStalk",
     handle: "Ramprosad",
     profileUrl: "https://www.stopstalk.com/user/profile/Ramprosad",
-    image: "/content/Stopstalk.png",
+    image: stopTalkImage,
     solving: "2600+",
     contest: "False",
     rating: "False",
@@ -61,23 +66,23 @@ const problemData = [
 const ProblemSolving: React.FC = () => {
   return (
     <div className="py-12 text-gray-300">
-      <div className="max-w-7xl mx-auto px-4">
-        <h3 className="text-3xl font-bold text-center text-white mb-12">
+      <div className="w-full">
+        <div className="text-xl md:text-2xl font-bold text-center text-white mb-8">
           Problem Solving
-        </h3>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {problemData.map((platform, idx) => (
+          {problemData?.map((platform, idx) => (
             <div
               key={idx}
-              className="bg-[#1e293b] rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden"
+              className="bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden"
               data-aos="fade-up"
               data-aos-delay={100 * (idx + 1)}
             >
               <img
                 src={platform.image}
                 alt={platform.name}
-                className="w-full h-40 object-contain p-4 bg-[#0f172a]"
+                className="w-full object-contain"
               />
               <div className="p-4">
                 <div className="flex justify-between items-center mb-2">
