@@ -1,7 +1,7 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
 import dynamicBlogImg from "../assets/dynamic-blog.png";
-import portfolioImg from "../assets/protfolio.png";
+import portfolioImg from "../assets/portfolio.png";
 import groceryImg from "../assets/grocery.png";
 
 const projects = [
@@ -41,15 +41,14 @@ const projects = [
       "Created an e-commerce platform for online grocery shopping with real-time order processing.",
       "Integrated secure user authentication and customer profiles.",
       "Implemented a dynamic product catalog with filtering, search, and category-based browsing.",
-      "Added payment gateway integration and order confirmation workflows.",
       "Built admin dashboard to manage products, categories, and order fulfillment.",
     ],
   },
   {
     title: "Portfolio",
     image: portfolioImg,
-    liveLink: "https://ramprosadg.github.io/portfolio",
-    techStack: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+    liveLink: "https://ramprosad-portfolio.vercel.app",
+    techStack: ["React", "JavaScript", "Typescript", "Tailwind CSS"],
     description: [
       "Designed and developed a fully responsive personal portfolio site.",
       "Showcases key projects, professional skills, achievements, and contact details.",
