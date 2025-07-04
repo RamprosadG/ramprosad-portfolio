@@ -23,10 +23,16 @@ const MainContent: React.FC = () => {
         <Education />
         <Language />
       </section>
-      <Projects />
-      <ProblemSolving />
-      <ProgrammignContest />
-      <Contact />
+      <section id="projects" className="">
+        <Projects />
+      </section>
+      <section id="achievements" className="">
+        <ProblemSolving />
+        <ProgrammignContest />
+      </section>
+      <section id="contact" className="">
+        <Contact />
+      </section>
     </div>
   );
 };

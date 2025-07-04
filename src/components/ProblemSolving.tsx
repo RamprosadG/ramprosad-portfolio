@@ -10,7 +10,7 @@ const problemData = [
     contest: "215+",
     rating: "1800",
     title: "Expert",
-    color: "text-cyan-400"
+    color: "text-cyan-400",
   },
   {
     name: "Codechef",
@@ -21,7 +21,7 @@ const problemData = [
     contest: "34+",
     rating: "1944",
     title: "4Star",
-    color: "text-purple-900"
+    color: "text-purple-900",
   },
   {
     name: "AtCoder",
@@ -32,7 +32,7 @@ const problemData = [
     contest: "30+",
     rating: "1101",
     title: "Brown",
-    color: "text-orange-700"
+    color: "text-orange-700",
   },
   {
     name: "LeetCode",
@@ -43,7 +43,7 @@ const problemData = [
     contest: "17+",
     rating: "1896",
     title: "Badge: 13",
-    color: "text-yellow-700"
+    color: "text-yellow-700",
   },
   {
     name: "StopStalk",
@@ -54,58 +54,81 @@ const problemData = [
     contest: "False",
     rating: "False",
     title: "False",
-    color: "text-purple-900"
+    color: "text-purple-900",
   },
 ];
 
 const ProblemSolving: React.FC = () => {
   return (
-    <section id="problem_solve" className="py-12 bg-primary text-white">
+    <div className="py-12 text-gray-300">
       <div className="max-w-7xl mx-auto px-4">
-        <h3 className="text-3xl font-bold text-center mb-12">Problem Solving</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <h3 className="text-3xl font-bold text-center text-white mb-12">
+          Problem Solving
+        </h3>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {problemData.map((platform, idx) => (
             <div
               key={idx}
-              className="bg-white text-black rounded-xl shadow-lg overflow-hidden"
+              className="bg-[#1e293b] rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden"
               data-aos="fade-up"
               data-aos-delay={100 * (idx + 1)}
             >
               <img
                 src={platform.image}
                 alt={platform.name}
-                className="w-full h-40 object-contain p-4"
+                className="w-full h-40 object-contain p-4 bg-[#0f172a]"
               />
               <div className="p-4">
-                <div className="flex justify-between items-center">
-                  <h4 className="text-xl font-semibold">{platform.name}</h4>
+                <div className="flex justify-between items-center mb-2">
+                  <h4 className="text-lg font-semibold text-white">
+                    {platform.name}
+                  </h4>
                   <a
                     href={platform.profileUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-600 text-sm hover:underline"
+                    className="text-blue-400 text-sm hover:underline"
                   >
                     Show Profile
                   </a>
                 </div>
-                <p className="mt-2">
-                  <strong>Handle:</strong>{" "}
-                  <span className={`text-lg font-semibold ${platform.color}`}>
+
+                <p className="text-sm">
+                  <span className="text-gray-400">Handle:</span>{" "}
+                  <span className="font-medium text-gray-200">
                     {platform.handle}
                   </span>
                 </p>
-                <div className="grid grid-cols-2 gap-2 mt-4 text-sm">
-                  <p><strong>Solving:</strong> {platform.solving}</p>
-                  <p><strong>Contest:</strong> {platform.contest}</p>
-                  <p><strong>Max Rating:</strong> {platform.rating}</p>
-                  <p><strong>{platform.name === "LeetCode" ? "Badge" : "Title"}:</strong> {platform.title}</p>
+
+                <div className="grid grid-cols-2 gap-2 mt-4 text-sm text-gray-400">
+                  <p>
+                    <span className="font-medium text-gray-300">Solving:</span>{" "}
+                    {platform.solving}
+                  </p>
+                  <p>
+                    <span className="font-medium text-gray-300">Contest:</span>{" "}
+                    {platform.contest}
+                  </p>
+                  <p>
+                    <span className="font-medium text-gray-300">
+                      Max Rating:
+                    </span>{" "}
+                    {platform.rating}
+                  </p>
+                  <p>
+                    <span className="font-medium text-gray-300">
+                      {platform.name === "LeetCode" ? "Badge" : "Title"}:
+                    </span>{" "}
+                    {platform.title}
+                  </p>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

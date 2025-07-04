@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
-    user_name: '',
-    user_email: '',
-    user_message: '',
+    user_name: "",
+    user_email: "",
+    user_message: "",
   });
   const [toastVisible, setToastVisible] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -17,78 +19,81 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // You would handle actual form submission here (e.g. API call)
 
     // Show toast message
     setToastVisible(true);
     setTimeout(() => setToastVisible(false), 3000);
-    setFormData({ user_name: '', user_email: '', user_message: '' });
+
+    // Reset form
+    setFormData({ user_name: "", user_email: "", user_message: "" });
   };
 
   return (
-    <section id="contact" className="py-16 flex justify-center items-center">
+    <div className="py-16 flex justify-center items-center bg-[#0f172a] text-gray-300">
       <div className="max-w-7xl w-full px-4">
-        <h5 className="text-2xl text-center font-semibold mb-8">Contact</h5>
+        <h5 className="text-3xl text-center font-semibold mb-10 text-white">
+          Contact
+        </h5>
 
-        <div className="flex flex-col md:flex-row gap-8">
+        <div className="flex flex-col md:flex-row gap-10">
           {/* Form Section */}
           <div className="w-full md:w-1/2">
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="relative">
-                <input
-                  type="text"
-                  name="user_name"
-                  id="user-name"
-                  value={formData.user_name}
-                  onChange={handleChange}
-                  placeholder=" "
-                  required
-                  className="peer w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
                 <label
-                  htmlFor="user-name"
-                  className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-sm transition-all"
+                  htmlFor="user-email"
+                  className="block mb-2 text-sm font-medium text-gray-400"
                 >
-                  Name
+                  Email
                 </label>
-              </div>
-
-              <div className="relative">
                 <input
                   type="email"
                   name="user_email"
                   id="user-email"
                   value={formData.user_email}
                   onChange={handleChange}
-                  placeholder=" "
                   required
-                  className="peer w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-3 border border-gray-700 rounded-md bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter your email"
                 />
-                <label
-                  htmlFor="user-email"
-                  className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-sm transition-all"
-                >
-                  Email
-                </label>
               </div>
 
-              <div className="relative">
+              <div>
+                <label
+                  htmlFor="user-name"
+                  className="block mb-2 text-sm font-medium text-gray-400"
+                >
+                  Subject
+                </label>
+                <input
+                  type="text"
+                  name="user_name"
+                  id="user-name"
+                  value={formData.user_name}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-700 rounded-md bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter your name"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="user-message"
+                  className="block mb-2 text-sm font-medium text-gray-400"
+                >
+                  Message
+                </label>
                 <textarea
                   name="user_message"
                   id="user-message"
                   rows={5}
                   value={formData.user_message}
                   onChange={handleChange}
-                  placeholder=" "
                   required
-                  className="peer w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-3 border border-gray-700 rounded-md bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Write your message..."
                 ></textarea>
-                <label
-                  htmlFor="user-message"
-                  className="absolute left-4 top-4 text-gray-500 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-sm transition-all"
-                >
-                  Message
-                </label>
               </div>
 
               <button
@@ -101,7 +106,7 @@ const Contact: React.FC = () => {
             </form>
 
             {toastVisible && (
-              <div className="fixed bottom-5 right-5 bg-green-500 text-white px-4 py-3 rounded shadow-lg transition">
+              <div className="fixed bottom-5 right-5 bg-green-600 text-white px-4 py-3 rounded shadow-lg">
                 Message sent
               </div>
             )}
@@ -110,21 +115,23 @@ const Contact: React.FC = () => {
           {/* Contact Info Section */}
           <div className="w-full md:w-1/2 space-y-6 text-right">
             <div>
-              <h6 className="text-lg font-semibold">Email</h6>
-              <p className="text-gray-700">ram.bsmrstu@gmail.com</p>
+              <h6 className="text-lg font-semibold text-white">Email</h6>
+              <p className="text-gray-400">ram.bsmrstu@gmail.com</p>
             </div>
             <div>
-              <h6 className="text-lg font-semibold">Phone</h6>
-              <p className="text-gray-700">+8801768157889</p>
+              <h6 className="text-lg font-semibold text-white">Phone</h6>
+              <p className="text-gray-400">+8801768157889</p>
             </div>
             <div>
-              <h6 className="text-lg font-semibold">Address</h6>
-              <p className="text-gray-700">Rajoir, Madaridpur, Dhaka</p>
-              <p className="text-gray-700">Bangladesh</p>
+              <h6 className="text-lg font-semibold text-white">Address</h6>
+              <p className="text-gray-400">Rajoir, Madaridpur, Dhaka</p>
+              <p className="text-gray-400">Bangladesh</p>
             </div>
 
             <div>
-              <h6 className="text-lg font-semibold">Connect with me</h6>
+              <h6 className="text-lg font-semibold text-white">
+                Connect with me
+              </h6>
               <div className="flex justify-end items-center gap-4 mt-2">
                 <a
                   href="https://github.com/RamprosadG"
@@ -132,7 +139,13 @@ const Contact: React.FC = () => {
                   rel="noopener noreferrer"
                   aria-label="GitHub"
                 >
-                  <span className="iconify" data-icon="akar-icons:github-fill" data-width="40" data-height="40"></span>
+                  <span
+                    className="iconify"
+                    data-icon="akar-icons:github-fill"
+                    data-width="40"
+                    data-height="40"
+                    style={{ color: "white" }}
+                  ></span>
                 </a>
                 <a
                   href="https://www.linkedin.com/in/ramprosad-gharami/"
@@ -140,7 +153,12 @@ const Contact: React.FC = () => {
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
                 >
-                  <span className="iconify" data-icon="logos:linkedin-icon" data-width="40" data-height="40"></span>
+                  <span
+                    className="iconify"
+                    data-icon="logos:linkedin-icon"
+                    data-width="40"
+                    data-height="40"
+                  ></span>
                 </a>
                 <a
                   href="https://www.facebook.com/ramprosad.gharami.568"
@@ -153,7 +171,7 @@ const Contact: React.FC = () => {
                     data-icon="akar-icons:facebook-fill"
                     data-width="40"
                     data-height="40"
-                    style={{ color: '#1877F2' }}
+                    style={{ color: "#1877F2" }}
                   ></span>
                 </a>
               </div>
@@ -161,7 +179,7 @@ const Contact: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

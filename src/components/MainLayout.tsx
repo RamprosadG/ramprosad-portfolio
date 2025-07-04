@@ -6,7 +6,7 @@ import Sidebar from "./Sidebar";
 
 const MainLayout: React.FC = () => {
   return (
-    <div className="bg-[#161616] font-serif text-white">
+    <div className="bg-[#161616] font-sans text-white">
       <div className="w-full max-w-[1200px] mx-auto flex">
         {/* Left Sidebar */}
         <aside className="hidden md:block w-1/3 bg-[#21212b] h-screen overflow-y-auto sticky top-0">
@@ -23,7 +23,7 @@ const MainLayout: React.FC = () => {
           </header>
 
           {/* Main Content */}
-          <main className="flex-grow py-6 px-5">
+          <main className="flex-grow py-6 px-2 md:px-6 lg:px-12">
             <MainContent />
           </main>
 

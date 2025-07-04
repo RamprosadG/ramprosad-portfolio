@@ -3,7 +3,7 @@ import { navigationItems } from "../static/navigationItems";
 
 const Header: React.FC = () => {
   return (
-    <nav className="flex items-center h-full gap-2 md:gap-4 lg:gap-6 justify-center text-xs md:text-lg lg:text-xl font-normal overflow-x-auto">
+    <nav className="flex items-center h-full gap-2 md:gap-4 lg:gap-6 justify-center text-xs md:text-base font-normal font-serif overflow-x-auto">
       {navigationItems.map(({ label, href }) => (
         <a
           key={label}

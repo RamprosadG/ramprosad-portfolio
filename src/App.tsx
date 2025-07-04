@@ -2,7 +2,7 @@ import MainLayout from "./components/MainLayout";
 
 function App() {
   return (
-    <div className=" ">
+    <div className="">
       <MainLayout />
     </div>
   );

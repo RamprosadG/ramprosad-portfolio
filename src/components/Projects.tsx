@@ -47,9 +47,9 @@ const projects = [
 
 const Projects: React.FC = () => {
   return (
-    <div id="projects" className="section py-16">
+    <div id="projects" className="py-12">
       <div className="w-full px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">
           Projects
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
