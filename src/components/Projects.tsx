@@ -61,16 +61,14 @@ const projects = [
 
 const Projects: React.FC = () => {
   return (
-    <div id="projects" className="py-12 bg-primary text-white">
-      <div className="w-full max-w-7xl mx-auto">
-        <h2 className="text-xl md:text-2xl font-bold text-center mb-12">
-          Projects
-        </h2>
-        <div className="grid grid-cols-1 gap-8">
-          {projects.map((project, idx) => (
-            <ProjectCard key={idx} {...project} />
-          ))}
-        </div>
+    <div className="w-full text-white">
+      <h2 className="text-xl md:text-2xl font-bold text-center mb-12">
+        Projects
+      </h2>
+      <div className="grid grid-cols-1 gap-8">
+        {projects.map((project, idx) => (
+          <ProjectCard key={idx} {...project} />
+        ))}
       </div>
     </div>
   );

@@ -65,73 +65,67 @@ const problemData = [
 
 const ProblemSolving: React.FC = () => {
   return (
-    <div className="py-12 text-gray-300">
-      <div className="w-full">
-        <div className="text-xl md:text-2xl font-bold text-center text-white mb-8">
-          Problem Solving
-        </div>
+    <div className="w-full text-white">
+      <div className="text-xl md:text-2xl font-bold text-center text-white mb-8">
+        Problem Solving
+      </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {problemData?.map((platform, idx) => (
-            <div
-              key={idx}
-              className="bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden"
-              data-aos="fade-up"
-              data-aos-delay={100 * (idx + 1)}
-            >
-              <img
-                src={platform.image}
-                alt={platform.name}
-                className="w-full object-contain"
-              />
-              <div className="p-4">
-                <div className="flex justify-between items-center mb-2">
-                  <h4 className="text-lg font-semibold text-white">
-                    {platform.name}
-                  </h4>
-                  <a
-                    href={platform.profileUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-400 text-sm hover:underline"
-                  >
-                    Show Profile
-                  </a>
-                </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {problemData?.map((platform, idx) => (
+          <div
+            key={idx}
+            className="bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay={100 * (idx + 1)}
+          >
+            <img
+              src={platform.image}
+              alt={platform.name}
+              className="w-full object-contain"
+            />
+            <div className="p-4">
+              <div className="flex justify-between items-center mb-2">
+                <h4 className="text-lg font-semibold text-white">
+                  {platform.name}
+                </h4>
+                <a
+                  href={platform.profileUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-400 text-sm hover:underline"
+                >
+                  Show Profile
+                </a>
+              </div>
 
-                <p className="text-sm">
-                  <span className="text-gray-400">Handle:</span>{" "}
-                  <span className="font-medium text-gray-200">
-                    {platform.handle}
-                  </span>
+              <p className="text-sm">
+                <span className="font-medium text-gray-300">Handle:</span>{" "}
+                <span className=" text-gray-400">{platform.handle}</span>
+              </p>
+
+              <div className="grid grid-cols-2 gap-2 mt-4 text-sm text-gray-400">
+                <p>
+                  <span className="font-medium text-gray-300">Solving:</span>{" "}
+                  {platform.solving}
                 </p>
-
-                <div className="grid grid-cols-2 gap-2 mt-4 text-sm text-gray-400">
-                  <p>
-                    <span className="font-medium text-gray-300">Solving:</span>{" "}
-                    {platform.solving}
-                  </p>
-                  <p>
-                    <span className="font-medium text-gray-300">Contest:</span>{" "}
-                    {platform.contest}
-                  </p>
-                  <p>
-                    <span className="font-medium text-gray-300">
-                      Max Rating:
-                    </span>{" "}
-                    {platform.rating}
-                  </p>
-                  <p>
-                    <span className="font-medium text-gray-300">
-                      {platform.name === "LeetCode" ? "Badge" : "Title"}:
-                    </span>{" "}
-                    {platform.title}
-                  </p>
-                </div>
+                <p>
+                  <span className="font-medium text-gray-300">Contest:</span>{" "}
+                  {platform.contest}
+                </p>
+                <p>
+                  <span className="font-medium text-gray-300">Max Rating:</span>{" "}
+                  {platform.rating}
+                </p>
+                <p>
+                  <span className="font-medium text-gray-300">
+                    {platform.name === "LeetCode" ? "Badge" : "Title"}:
+                  </span>{" "}
+                  {platform.title}
+                </p>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );

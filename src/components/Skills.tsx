@@ -57,34 +57,32 @@ const skillsData: SkillCategory[] = [
 
 const Skills: React.FC = () => {
   return (
-    <div className="py-12">
-      <div className="mx-auto w-full">
-        <div className="text-xl md:text-2xl font-semibold text-center text-white mb-8">
-          Skills
-        </div>
+    <div className="text-white w-full">
+      <div className="text-xl md:text-2xl font-semibold text-center text-white mb-8">
+        Skills
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {skillsData.map((section, idx) => (
-            <div
-              key={idx}
-              className="bg-gray-800 rounded-lg shadow-sm p-6 hover:shadow-md transition"
-            >
-              <h3 className="text-lg font-medium text-white mb-4">
-                {section.category}
-              </h3>
-              <ul className="flex flex-wrap gap-2 w-full">
-                {section.items.map((item, index) => (
-                  <li
-                    key={index}
-                    className="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {skillsData.map((section, idx) => (
+          <div
+            key={idx}
+            className="bg-gray-800 rounded-lg shadow-sm p-6 hover:shadow-md transition"
+          >
+            <h3 className="text-lg font-medium text-white mb-4">
+              {section.category}
+            </h3>
+            <ul className="flex flex-wrap gap-2 w-full">
+              {section.items.map((item, index) => (
+                <li
+                  key={index}
+                  className="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   );

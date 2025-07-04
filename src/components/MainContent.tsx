@@ -11,14 +11,14 @@ import Profile from "./Profile";
 
 const MainContent: React.FC = () => {
   return (
-    <div className="w-full flex flex-col">
-      <section id="profile" className=" md:hidden">
+    <div className="w-full flex flex-col gap-12">
+      <section id="profile" className="md:hidden">
         <Profile />
       </section>
       <section id="about" className="">
         <About />
       </section>
-      <section id="resume" className="">
+      <section id="resume" className="flex flex-col gap-12">
         <Skills />
         <Experiences />
         <Education />
@@ -26,7 +26,7 @@ const MainContent: React.FC = () => {
       <section id="projects" className="">
         <Projects />
       </section>
-      <section id="achievements" className="">
+      <section id="achievements" className="flex flex-col gap-12">
         <ProblemSolving />
         <ProgrammignContest />
       </section>

@@ -45,43 +45,39 @@ import { MdArrowRight } from "react-icons/md";
 
 const Experiences: React.FC = () => {
   return (
-    <div className="py-12">
-      <div className="w-full mx-auto">
-        <div className="text-xl md:text-2xl font-semibold text-center text-white mb-8">
-          Working Experience
-        </div>
+    <div className="w-full text-white">
+      <div className="text-xl md:text-2xl font-semibold text-center text-white mb-8">
+        Working Experience
+      </div>
 
-        <div className="flex flex-col gap-8">
-          {experiences.map((exp, idx) => (
-            <div
-              key={idx}
-              className={`relative bg-gray-800 shadow-sm rounded-lg p-6 border-l-4 ${
-                exp.current ? "border-blue-500" : "border-gray-700"
-              } hover:shadow-md transition`}
-            >
-              <div className="absolute top-5 left-[-10px] w-4 h-4 bg-blue-500 rounded-full border-2 border-gray-900 shadow" />
-              <div className="mb-2">
-                <span className="text-sm text-yellow-200 border border-yellow-200 p-1 rounded">
-                  {exp.duration}
-                </span>
-              </div>
-              <div className="text-base font-semibold text-white">
-                {exp.role}
-              </div>
-              <div className="text-base font-normal text-white mb-4">
-                {exp.company}
-              </div>
-              <ul className="space-y-2 text-white text-sm">
-                {exp.experiences?.map((item, i) => (
-                  <li key={i} className="flex items-start">
-                    <MdArrowRight className="text-inherit text-lg shrink-0 p-0 m-0" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+      <div className="flex flex-col gap-8">
+        {experiences.map((exp, idx) => (
+          <div
+            key={idx}
+            className={`relative bg-gray-800 shadow-sm rounded-lg p-6 border-l-4 ${
+              exp.current ? "border-blue-500" : "border-gray-700"
+            } hover:shadow-md transition`}
+          >
+            <div className="absolute top-5 left-[-10px] w-4 h-4 bg-blue-500 rounded-full border-2 border-gray-900 shadow" />
+            <div className="mb-2">
+              <span className="text-sm text-yellow-200 border border-yellow-200 p-1 rounded">
+                {exp.duration}
+              </span>
             </div>
-          ))}
-        </div>
+            <div className="text-base font-semibold text-white">{exp.role}</div>
+            <div className="text-base font-normal text-white mb-4">
+              {exp.company}
+            </div>
+            <ul className="space-y-2 text-white text-sm">
+              {exp.experiences?.map((item, i) => (
+                <li key={i} className="flex items-start">
+                  <MdArrowRight className="text-inherit text-lg shrink-0 p-0 m-0" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   );
