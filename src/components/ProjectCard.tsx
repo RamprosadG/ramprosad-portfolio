@@ -1,11 +1,12 @@
 import React from "react";
+import { MdArrowRight } from "react-icons/md";
 
 interface ProjectCardProps {
   title: string;
   image: string;
   liveLink: string;
   techStack: string[];
-  description: string[]; // <-- changed from string to string[]
+  description: string[];
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -50,8 +51,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </div>
 
         <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
-          {description.map((point, idx) => (
-            <li key={idx}>{point}</li>
+          {description?.map((item, i) => (
+            <li key={i} className="flex items-start">
+              <MdArrowRight className="text-inherit text-lg shrink-0 p-0 m-0" />
+              <span>{item}</span>
+            </li>
           ))}
         </ul>
       </div>

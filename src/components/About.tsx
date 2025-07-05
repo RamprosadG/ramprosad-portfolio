@@ -39,23 +39,21 @@ const About: React.FC = () => {
       <h2 className="text-xl md:text-2xl font-bold mb-8 text-center">
         About Me
       </h2>
-      <p className="text-gray-200 leading-relaxed text-lg mb-8 text-justify">
-        <strong>Hello! I'm Ramprosad Gharami.</strong>
-        <br />A Software Engineer and Competitive Programmer with a B.Sc. in
-        Computer Science from Gopalganj Science and Technology University. I
-        specialize in building full-stack web applications using modern
-        technologies like Node.js, React.js, Tailwind CSS, and MongoDB.
-        <br />
-        <br />
-        With a strong foundation in problem-solving and real-world development,
-        I've worked on projects ranging from real-time apps with WebSockets to
-        secure payment integrations (Paddle, UddoktaPay). I'm passionate about
-        clean, scalable code and continuous learning.
-        <br />
-        <br />
-        Beyond coding, I enjoy competitive programming, fast typing, and
-        engaging with tech communities. I'm always eager to collaborate on
-        impactful, challenging projects.
+      <p className="text-gray-200 leading-relaxed mb-8 text-justify">
+        Hello! I'm Ramprosad Gharami — a Software Engineer and Competitive
+        Programmer with a B.Sc. in Computer Science and Engineering from
+        Gopalganj Science and Technology University. I specialize in building
+        modern full-stack web applications using technologies like Node.js,
+        React.js, Tailwind CSS, and MongoDB. My work spans from real-time
+        applications with WebSockets to secure payment gateway integrations such
+        as Paddle and UddoktaPay. With a strong foundation in problem-solving
+        and practical software development, I focus on writing clean, scalable,
+        and maintainable code. I'm deeply passionate about continuous learning
+        and staying updated with emerging technologies. Outside of coding, I
+        actively participate in competitive programming, enjoy fast typing, and
+        engage with tech communities. I'm always open to collaborating on
+        impactful and technically challenging projects. Let's build something
+        amazing together!
       </p>
 
       {/* Services Section */}
