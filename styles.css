@@ -8,3 +8,20 @@ section {
   scroll-margin-top: 70px;
   scroll-behavior: smooth;
 }
+@keyframes blink {
+
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 2s steps(1, start) infinite;
+}
