@@ -25,3 +25,70 @@ section {
 .animate-blink {
   animation: blink 2s steps(1, start) infinite;
 }
+.dual-rotating-border-hover {
+  position: relative;
+  padding: 4px;
+  border-radius: 0.25rem;
+  /* Tailwind rounded */
+  overflow: hidden;
+}
+
+.dual-rotating-border-hover::before,
+.dual-rotating-border-hover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 0.25rem;
+  padding: 2px;
+  box-sizing: border-box;
+  border: 3px solid transparent;
+  /* base transparent */
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Both halves same color */
+.dual-rotating-border-hover::before {
+  border-top-color: #06b6d4;
+  border-right-color: #06b6d4;
+  transform-origin: center center;
+}
+
+.dual-rotating-border-hover::after {
+  border-bottom-color: #06b6d4;
+  border-left-color: #06b6d4;
+  transform-origin: center center;
+}
+
+/* On hover: fade in and rotate */
+.dual-rotating-border-hover:hover::before {
+  opacity: 1;
+  animation: rotateClockwise 8s linear infinite;
+}
+
+.dual-rotating-border-hover:hover::after {
+  opacity: 1;
+  animation: rotateCounterClockwise 8s linear infinite;
+}
+
+@keyframes rotateClockwise {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateCounterClockwise {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}

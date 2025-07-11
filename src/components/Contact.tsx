@@ -6,7 +6,7 @@ import {
   emailTemplateId,
   emailPublicKey,
 } from "../configs/dotenv";
-import { FaFacebook, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import SocialLinks from "./SocialLinks";
 
 type FormData = {
   email: string;
@@ -140,36 +140,7 @@ const Contact: React.FC = () => {
         </form>
 
         {/* Social Icons */}
-        <div className="w-full justify-center flex items-center gap-4 mt-4 text-2xl text-gray-300">
-          <a
-            href="https://linkedin.com/in/ramprosad-gharami"
-            target="_blank"
-            className="hover:text-cyan-400"
-          >
-            <FaLinkedin />
-          </a>
-          <a
-            href="https://github.com/RamprosadG"
-            target="_blank"
-            className="hover:text-cyan-400"
-          >
-            <FaGithub />
-          </a>
-          <a
-            href="https://wa.me/8801323410373"
-            target="_blank"
-            className="hover:text-cyan-400"
-          >
-            <FaWhatsapp />
-          </a>
-          <a
-            href="https://www.facebook.com/ramprosad.gharami.568"
-            target="_blank"
-            className="hover:text-cyan-400"
-          >
-            <FaFacebook />
-          </a>
-        </div>
+        <SocialLinks />
 
         {/* Contact Info */}
         <div className="w-full text-center space-y-1">

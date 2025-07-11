@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import resume from "../assets/Resume_Ramprosad_Gharami.pdf";
-import { FaLinkedin, FaGithub, FaWhatsapp, FaFacebook } from "react-icons/fa";
 import ProfileImage from "../assets/Ramprosad.jpg";
+import SocialLinks from "./SocialLinks";
+import { MdFileDownload } from "react-icons/md";
+import { FaPaperPlane } from "react-icons/fa";
 
 const designation = [
   "Software Engineer",
@@ -45,59 +47,38 @@ const Profile: React.FC = () => {
     <div className="text-white w-full">
       {/* Profile Header */}
       <div className="flex flex-col items-center">
-        <img src={ProfileImage} alt="Profile" className="w-full object-cover" />
-        <h2 className="text-2xl font-bold mt-4">Ramprosad Gharami</h2>
+          <img
+            src={ProfileImage}
+            alt="Profile"
+            className="w-full object-cover rounded"
+          />
+        <h2 className="text-xl font-bold mt-4">Ramprosad Gharami</h2>
         <p className="text-yellow-500 text-lg font-semibold h-6">
           {displayDesignation}
           <span className="animate-blink">|</span>
         </p>
 
         {/* Social Icons */}
-        <div className="w-full justify-center flex items-center gap-4 mt-4 text-2xl text-gray-300">
-          <a
-            href="https://linkedin.com/in/ramprosad-gharami"
-            target="_blank"
-            className="hover:text-cyan-400"
-          >
-            <FaLinkedin />
-          </a>
-          <a
-            href="https://github.com/RamprosadG"
-            target="_blank"
-            className="hover:text-cyan-400"
-          >
-            <FaGithub />
-          </a>
-          <a
-            href="https://wa.me/8801323410373"
-            target="_blank"
-            className="hover:text-cyan-400"
-          >
-            <FaWhatsapp />
-          </a>
-          <a
-            href="https://www.facebook.com/ramprosad.gharami.568"
-            target="_blank"
-            className="hover:text-cyan-400"
-          >
-            <FaFacebook />
-          </a>
+        <div className="mt-4">
+          <SocialLinks />
         </div>
       </div>
       <div className="w-full mt-6">
-        <div className="flex md:flex-col lg:flex-row gap-4 w-full">
+        <div className="flex md:flex-col lg:flex-row gap-2 md:gap:4 w-full">
           <a
             href={resume}
             download
-            className="w-full text-center text-sm bg-cyan-600 hover:bg-cyan-700 text-white py-2 rounded-lg transition"
+            className="group w-full text-center text-sm bg-cyan-600 hover:bg-cyan-700 text-white py-2 rounded-lg transition flex items-center justify-center gap-1 md:gap-2"
           >
-            Download Resume
+            <span>Download Resume</span>
+            <MdFileDownload className="group-hover:animate-bounce h-4 w-4" />
           </a>
           <a
             href="#contact"
-            className="w-full text-center text-sm bg-cyan-600 hover:bg-cyan-700 text-white py-2 rounded-lg transition"
+            className="group w-full text-center text-sm bg-cyan-600 hover:bg-cyan-700 text-white py-2 rounded-lg transition flex items-center justify-center gap-1 md:gap-2"
           >
-            Contact Me
+            <span>Contact Me</span>
+            <FaPaperPlane className="group-hover:translate-x-1 transition-transform duration-300" />
           </a>
         </div>
       </div>
