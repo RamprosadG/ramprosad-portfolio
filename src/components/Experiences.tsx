@@ -42,13 +42,12 @@ const experiences: Experience[] = [
 ];
 
 import { MdArrowRight } from "react-icons/md";
+import SectionTitle from "./SectionTitle";
 
 const Experiences: React.FC = () => {
   return (
     <div className="w-full text-white">
-      <div className="text-xl md:text-2xl font-semibold text-center text-white mb-8">
-        Working Experience
-      </div>
+      <SectionTitle title="Working Experiences" />
 
       <div className="flex flex-col gap-8">
         {experiences.map((exp, idx) => (

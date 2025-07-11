@@ -4,6 +4,7 @@ import codechefImage from "../assets/Codechef.png";
 import atcoderImg from "../assets/Atcoder.png";
 import leetcodeImage from "../assets/LeetCode.png";
 import stopTalkImage from "../assets/Stopstalk.png";
+import SectionTitle from "./SectionTitle";
 
 const problemData = [
   {
@@ -66,9 +67,7 @@ const problemData = [
 const ProblemSolving: React.FC = () => {
   return (
     <div className="w-full text-white">
-      <div className="text-xl md:text-2xl font-bold text-center text-white mb-8">
-        Problem Solving
-      </div>
+      <SectionTitle title="Problem Solving" />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {problemData?.map((platform, idx) => (

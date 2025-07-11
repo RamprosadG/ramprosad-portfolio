@@ -1,11 +1,10 @@
 import React from "react";
+import SectionTitle from "./SectionTitle";
 
 const Education: React.FC = () => {
   return (
     <div className="text-white w-full">
-      <div className="text-xl md:text-2xl text-center font-semibold mb-8 text-white">
-        Education
-      </div>
+      <SectionTitle title="Education" />
 
       <div className="bg-secondary rounded-xl shadow-md">
         <div className="text-white text-lg font-semibold">

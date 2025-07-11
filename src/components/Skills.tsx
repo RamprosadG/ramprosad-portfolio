@@ -1,4 +1,5 @@
 import React from "react";
+import SectionTitle from "./SectionTitle";
 
 interface SkillCategory {
   category: string;
@@ -58,9 +59,7 @@ const skillsData: SkillCategory[] = [
 const Skills: React.FC = () => {
   return (
     <div className="text-white w-full">
-      <div className="text-xl md:text-2xl font-semibold text-center text-white mb-8">
-        Skills
-      </div>
+      <SectionTitle title="Skills" />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {skillsData.map((section, idx) => (

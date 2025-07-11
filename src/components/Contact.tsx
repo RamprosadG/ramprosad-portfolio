@@ -7,6 +7,7 @@ import {
   emailPublicKey,
 } from "../configs/dotenv";
 import SocialLinks from "./SocialLinks";
+import SectionTitle from "./SectionTitle";
 
 type FormData = {
   email: string;
@@ -38,9 +39,7 @@ const Contact: React.FC = () => {
 
   return (
     <div className="w-full text-white">
-      <h2 className="text-xl md:text-2xl text-center font-semibold mb-10 text-white">
-        Contact Me
-      </h2>
+      <SectionTitle title="Contact Me" />
 
       <div className="bg-gray-800 p-6 rounded-lg flex flex-col gap-10">
         {/* Form Section */}

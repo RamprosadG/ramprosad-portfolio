@@ -1,4 +1,5 @@
 import React from "react";
+import SectionTitle from "./SectionTitle";
 
 const services = [
   {
@@ -36,9 +37,7 @@ const About: React.FC = () => {
   return (
     <div className="w-full text-white">
       {/* About Me Section */}
-      <h2 className="text-xl md:text-2xl font-bold mb-8 text-center">
-        About Me
-      </h2>
+      <SectionTitle title="About Me" />
       <p className="text-gray-200 leading-relaxed mb-8 text-justify">
         Hello! I'm Ramprosad Gharami — a Software Engineer and Competitive
         Programmer with a B.Sc. in Computer Science and Engineering from
@@ -57,9 +56,7 @@ const About: React.FC = () => {
       </p>
 
       {/* Services Section */}
-      <h3 className="text-2xl font-semibold mb-8 text-white text-center">
-        Services
-      </h3>
+      <SectionTitle title="Services" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
         {services.map((service, index) => (
           <div
@@ -75,9 +72,7 @@ const About: React.FC = () => {
       </div>
 
       {/* Interests Section */}
-      <h3 className="text-2xl font-semibold mb-8 text-white text-center">
-        Interests
-      </h3>
+      <SectionTitle title="Interests" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {interests.map((item, index) => (
           <div

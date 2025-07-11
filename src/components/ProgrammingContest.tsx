@@ -1,4 +1,5 @@
 import React from "react";
+import SectionTitle from "./SectionTitle";
 
 type Achievement = {
   contest: string;
@@ -43,9 +44,7 @@ const achievements: Achievement[] = [
 const ProgrammignContest: React.FC = () => {
   return (
     <div className="text-white w-full">
-      <h2 className="text-xl md:text-2xl font-bold text-center mb-10">
-        Programming Contests
-      </h2>
+      <SectionTitle title="Programming Contests" />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {achievements.map((item, index) => (

@@ -3,6 +3,7 @@ import ProjectCard from "./ProjectCard";
 import dynamicBlogImg from "../assets/dynamic-blog.png";
 import portfolioImg from "../assets/portfolio.png";
 import groceryImg from "../assets/grocery.png";
+import SectionTitle from "./SectionTitle";
 
 const projects = [
   {
@@ -69,9 +70,7 @@ const projects = [
 const Projects: React.FC = () => {
   return (
     <div className="w-full text-white">
-      <h2 className="text-xl md:text-2xl font-bold text-center mb-12">
-        Projects
-      </h2>
+      <SectionTitle title="Projects" />
       <div className="grid grid-cols-1 gap-8">
         {projects?.map((project, idx) => (
           <ProjectCard key={idx} {...project} />
