@@ -64,7 +64,7 @@ const Contact: React.FC = () => {
                     message: "Invalid email",
                   },
                 })}
-                className="w-full px-4 py-3 border border-gray-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-3 border border-cyan-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-700"
                 placeholder="Enter your email"
               />
               {errors.email && (
@@ -88,7 +88,7 @@ const Contact: React.FC = () => {
                 {...register("subject", {
                   required: "Subject is required",
                 })}
-                className="w-full px-4 py-3 border border-gray-700 rounded-md bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-3 border border-cyan-700 rounded-md bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-700"
                 placeholder="Enter subject"
               />
               {errors.subject && (
@@ -113,7 +113,7 @@ const Contact: React.FC = () => {
               {...register("message", {
                 required: "Message is required",
               })}
-              className="w-full px-4 py-3 border border-gray-700 rounded-md bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 border border-cyan-700 rounded-md bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-700"
               placeholder="Write your message..."
             ></textarea>
             {errors.message && (
@@ -127,13 +127,13 @@ const Contact: React.FC = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="mt-4 px-6 py-2 cursor-pointer bg-blue-600 text-white rounded hover:bg-blue-700 transition w-full justify-center flex items-center gap-2"
+            className="mt-4 px-6 py-2 cursor-pointer bg-cyan-600 text-white rounded hover:bg-cyan-700 transition w-full justify-center flex items-center gap-2"
           >
             {isSubmitting ? "Sending..." : "Send Message"}
           </button>
 
           {toastVisible && (
-            <div className="fixed bottom-5 right-5 bg-green-600 text-white px-4 py-3 rounded shadow-lg">
+            <div className="fixed bottom-5 right-5 bg-cyan-600 text-white px-4 py-2 rounded shadow-lg">
               Message sent!
             </div>
           )}
