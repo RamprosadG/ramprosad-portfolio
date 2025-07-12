@@ -91,7 +91,7 @@ const ProblemSolving: React.FC = () => {
                   href={platform.profileUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-400 text-sm hover:underline"
+                  className="text-cyan-600 hover:text-cyan-700 text-sm underline"
                 >
                   Show Profile
                 </a>
