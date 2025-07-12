@@ -8,6 +8,8 @@ import Contact from "./Contact";
 import ProblemSolving from "./ProblemSolving";
 import Education from "./Education";
 import Profile from "./Profile";
+import Services from "./Services";
+import Interests from "./Interests";
 
 const MainContent: React.FC = () => {
   return (
@@ -15,8 +17,10 @@ const MainContent: React.FC = () => {
       <section id="profile" className="md:hidden">
         <Profile />
       </section>
-      <section id="about" className="">
+      <section id="about" className="flex flex-col gap-12">
         <About />
+        <Services />
+        <Interests />
       </section>
       <section id="resume" className="flex flex-col gap-12">
         <Skills />
