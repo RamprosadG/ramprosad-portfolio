@@ -4,6 +4,7 @@ import codechefImage from "../assets/Codechef.png";
 import atcoderImg from "../assets/Atcoder.png";
 import leetcodeImage from "../assets/LeetCode.png";
 import stopTalkImage from "../assets/Stopstalk.png";
+import tophImage from "../assets/toph.png";
 import SectionTitle from "./SectionTitle";
 
 const problemData = [
@@ -16,7 +17,6 @@ const problemData = [
     contest: "215+",
     rating: "1800",
     title: "Expert",
-    color: "text-cyan-400",
   },
   {
     name: "Codechef",
@@ -27,7 +27,6 @@ const problemData = [
     contest: "34+",
     rating: "1944",
     title: "4Star",
-    color: "text-purple-900",
   },
   {
     name: "AtCoder",
@@ -38,7 +37,6 @@ const problemData = [
     contest: "30+",
     rating: "1101",
     title: "Brown",
-    color: "text-orange-700",
   },
   {
     name: "LeetCode",
@@ -49,7 +47,16 @@ const problemData = [
     contest: "17+",
     rating: "1896",
     title: "Badge: 13",
-    color: "text-yellow-700",
+  },
+  {
+    name: "Toph",
+    handle: "Ramprosad",
+    profileUrl: "https://toph.co/u/RamprosadG",
+    image: tophImage,
+    solving: "230+",
+    contest: "10+",
+    rating: "1697",
+    title: "A",
   },
   {
     name: "StopStalk",
@@ -60,7 +67,6 @@ const problemData = [
     contest: "False",
     rating: "False",
     title: "False",
-    color: "text-purple-900",
   },
 ];
 

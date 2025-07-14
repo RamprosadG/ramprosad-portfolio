@@ -4,6 +4,20 @@ import dynamicBlogImg from "../assets/dynamic-blog.png";
 import portfolioImg from "../assets/portfolio.png";
 import groceryImg from "../assets/grocery.png";
 import SectionTitle from "./SectionTitle";
+import {
+  SiNodedotjs,
+  SiExpress,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiPostgresql,
+  SiPrisma,
+  SiMysql,
+  SiReact,
+  SiJavascript,
+  SiTypescript,
+  SiRedux,
+  SiSocketdotio,
+} from "react-icons/si";
 
 const projects = [
   {
@@ -11,12 +25,14 @@ const projects = [
     image: dynamicBlogImg,
     liveLink: "https://dynamic-blog-client.vercel.app",
     techStack: [
-      "Node JS",
-      "Express JS",
-      "Next JS",
-      "Tailwind CSS",
-      "PostgreSQL",
-      "Prisma",
+      { name: "Node JS", icon: SiNodedotjs },
+      { name: "Express JS", icon: SiExpress },
+      { name: "Next JS", icon: SiNextdotjs },
+      { name: "Tailwind CSS", icon: SiTailwindcss },
+      { name: "PostgreSQL", icon: SiPostgresql },
+      { name: "Prisma", icon: SiPrisma },
+      { name: "Redux", icon: SiRedux },
+      { name: "Socket.io", icon: SiSocketdotio },
     ],
     description: [
       "Developed a feature-rich blogging platform focused on competitive programming, delivering a seamless user experience with real-time interactivity and scalable architecture.",
@@ -34,12 +50,13 @@ const projects = [
     image: groceryImg,
     liveLink: "https://grocery-client-five.vercel.app",
     techStack: [
-      "Node JS",
-      "Express JS",
-      "Next JS",
-      "Tailwind CSS",
-      "MySQL",
-      "Prisma",
+      { name: "Node JS", icon: SiNodedotjs },
+      { name: "Express JS", icon: SiExpress },
+      { name: "Next JS", icon: SiNextdotjs },
+      { name: "Tailwind CSS", icon: SiTailwindcss },
+      { name: "MySQL", icon: SiMysql },
+      { name: "Prisma", icon: SiPrisma },
+      { name: "Redux", icon: SiRedux },
     ],
     description: [
       "Developed a full-featured eCommerce platform for managing grocery products using Next.js, Node.js, Redux, and MySQL.",
@@ -56,7 +73,12 @@ const projects = [
     title: "Portfolio",
     image: portfolioImg,
     liveLink: "https://ramprosad-portfolio.vercel.app",
-    techStack: ["React", "JavaScript", "Typescript", "Tailwind CSS"],
+    techStack: [
+      { name: "React", icon: SiReact },
+      { name: "JavaScript", icon: SiJavascript },
+      { name: "Typescript", icon: SiTypescript },
+      { name: "Tailwind CSS", icon: SiTailwindcss },
+    ],
     description: [
       "Designed and developed a fully responsive personal portfolio website.",
       "Showcases key projects, professional skills, achievements, and contact information.",

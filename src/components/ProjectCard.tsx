@@ -1,11 +1,16 @@
 import React from "react";
+import type { IconType } from "react-icons";
 import { MdArrowRight } from "react-icons/md";
 
+interface TechStack {
+  name: string;
+  icon: IconType;
+}
 interface ProjectCardProps {
   title: string;
   image: string;
   liveLink: string;
-  techStack: string[];
+  techStack: TechStack[];
   description: string[];
 }
 
@@ -38,18 +43,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             </button>
           </a>
         </div>
-
-        <div className="flex flex-wrap gap-2 text-sm">
-          {techStack.map((tech, index) => (
-            <span
-              key={index}
-              className="bg-gray-700 text-gray-200 px-2 py-1 rounded-full"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-
         <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
           {description?.map((item, i) => (
             <li key={i} className="flex items-start">
@@ -58,6 +51,23 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             </li>
           ))}
         </ul>
+        <div className="pt-2 flex flex-wrap items-center gap-2 text-sm">
+          <span className="text-base font-semibold text-gray-200">
+            Tech Stack:
+          </span>
+          {techStack.map((tech, index) => {
+            const Icon = tech.icon;
+            return (
+              <span
+                key={index}
+                className="flex items-center gap-1 bg-gray-700 text-gray-200 px-2 py-1 rounded-lg"
+              >
+                <Icon className="text-base" />
+                {tech.name}
+              </span>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
