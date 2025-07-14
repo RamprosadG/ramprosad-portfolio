@@ -54,20 +54,22 @@ const Experiences: React.FC = () => {
           <div
             key={idx}
             className={`relative bg-gray-800 shadow-sm rounded-lg p-6 border-l-4 ${
-              exp.current ? "border-blue-500" : "border-gray-700"
+              exp.current ? "border-amber-300" : "border-gray-300"
             } hover:shadow-md transition`}
           >
-            <div className="absolute top-5 left-[-10px] w-4 h-4 bg-blue-500 rounded-full border-2 border-gray-900 shadow" />
+            <div className="absolute top-5 left-[-10px] w-4 h-4 bg-cyan-700 rounded-full border-2 border-gray-900 shadow" />
             <div className="mb-2">
-              <span className="text-sm text-yellow-200 border border-yellow-200 p-1 rounded">
+              <span className="text-sm text-amber-300 border border-amber-300 p-1 rounded">
                 {exp.duration}
               </span>
             </div>
-            <div className="text-base font-semibold text-white">{exp.role}</div>
-            <div className="text-base font-normal text-white mb-4">
+            <div className="text-lg font-semibold text-gray-200">
+              {exp.role}
+            </div>
+            <div className="text-base font-normal text-gray-300 mb-4">
               {exp.company}
             </div>
-            <ul className="space-y-2 text-white text-sm">
+            <ul className="space-y-2 text-gray-200 text-sm">
               {exp.experiences?.map((item, i) => (
                 <li key={i} className="flex items-start">
                   <MdArrowRight className="text-inherit text-lg shrink-0 p-0 m-0" />

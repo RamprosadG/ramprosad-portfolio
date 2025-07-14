@@ -33,7 +33,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             rel="noopener noreferrer"
             aria-label="Live Project"
           >
-            <button className="bg-gray-700 hover:bg-gray-600 cursor-pointer text-white px-3 py-1 text-sm rounded-md transition">
+            <button className="hover:bg-gray-600 cursor-pointer text-amber-300 px-3 py-1 border border-amber-300 text-sm rounded-md transition">
               Live Project
             </button>
           </a>

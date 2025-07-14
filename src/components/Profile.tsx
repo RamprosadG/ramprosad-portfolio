@@ -47,13 +47,13 @@ const Profile: React.FC = () => {
     <div className="text-white w-full">
       {/* Profile Header */}
       <div className="flex flex-col items-center">
-          <img
-            src={ProfileImage}
-            alt="Profile"
-            className="w-full object-cover rounded"
-          />
+        <img
+          src={ProfileImage}
+          alt="Profile"
+          className="w-full object-cover rounded"
+        />
         <h2 className="text-xl font-bold mt-4">Ramprosad Gharami</h2>
-        <p className="text-yellow-500 text-lg font-semibold h-6">
+        <p className="text-amber-300 text-lg font-semibold h-6">
           {displayDesignation}
           <span className="animate-blink">|</span>
         </p>

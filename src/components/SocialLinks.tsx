@@ -41,7 +41,7 @@ const SocialLinks: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={link.label}
-          className="p-1 rounded-full hover:bg-yellow-500 hover:text-black transition-colors duration-300"
+          className="p-1 rounded-full hover:bg-amber-300 hover:text-black transition-colors duration-300"
         >
           {link.icon}
         </a>

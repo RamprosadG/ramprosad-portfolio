@@ -82,41 +82,42 @@ const ProblemSolving: React.FC = () => {
               alt={platform.name}
               className="w-full object-contain"
             />
-            <div className="p-4">
-              <div className="flex justify-between items-center mb-2">
-                <h4 className="text-lg font-semibold text-white">
+            <div className="p-4 text-gray-200">
+              <div className="flex justify-between items-center mb-1">
+                <h4 className="text-xl font-semibold text-gray-100">
                   {platform.name}
                 </h4>
                 <a
                   href={platform.profileUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-cyan-600 hover:text-cyan-700 text-sm underline"
                 >
-                  Show Profile
+                  <button className="hover:bg-gray-600 cursor-pointer text-amber-300 px-3 py-1 border border-amber-300 text-sm rounded-md transition">
+                    Show Profile
+                  </button>
                 </a>
               </div>
 
               <p className="text-sm">
-                <span className="font-medium text-gray-300">Handle:</span>{" "}
-                <span className=" text-gray-400">{platform.handle}</span>
+                <span className="font-medium">Handle:</span>{" "}
+                <span className=" ">{platform.handle}</span>
               </p>
 
-              <div className="grid grid-cols-2 gap-2 mt-4 text-sm text-gray-400">
+              <div className="grid grid-cols-2 gap-2 mt-2 text-sm">
                 <p>
-                  <span className="font-medium text-gray-300">Solving:</span>{" "}
+                  <span className="font-medium">Solving:</span>{" "}
                   {platform.solving}
                 </p>
                 <p>
-                  <span className="font-medium text-gray-300">Contest:</span>{" "}
+                  <span className="font-medium">Contest:</span>{" "}
                   {platform.contest}
                 </p>
                 <p>
-                  <span className="font-medium text-gray-300">Max Rating:</span>{" "}
+                  <span className="font-medium">Max Rating:</span>{" "}
                   {platform.rating}
                 </p>
                 <p>
-                  <span className="font-medium text-gray-300">
+                  <span className="font-medium">
                     {platform.name === "LeetCode" ? "Badge" : "Title"}:
                   </span>{" "}
                   {platform.title}
