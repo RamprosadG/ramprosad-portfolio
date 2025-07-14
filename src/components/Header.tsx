@@ -10,7 +10,7 @@ const Header: React.FC = () => {
           <img
             src={ProfileImage}
             alt="Profile"
-            className="w-4 h-4 rounded-full object-cover border border-white"
+            className="w-6 h-6 rounded-full object-cover border border-amber-300"
           />
         </a>
       </div>
@@ -20,8 +20,8 @@ const Header: React.FC = () => {
           href={href}
           aria-label={`${label.toLowerCase()}`}
           className="relative py-1 h-full flex items-center text-center text-white transition-colors
-                       after:content-[''] after:absolute after:left-0 after:bottom-2 after:h-[2px] after:w-0
-                       after:bg-white hover:after:w-full after:transition-all after:duration-300"
+                       after:content-[''] hover:text-amber-300 after:absolute after:left-0 after:bottom-2 after:h-[2px] after:w-0
+                       after:bg-amber-300 hover:after:w-full after:transition-all after:duration-300"
         >
           {label}
         </a>
