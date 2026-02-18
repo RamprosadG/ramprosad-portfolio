@@ -3,6 +3,7 @@ import ProjectCard from "./ProjectCard";
 import dynamicBlogImg from "../assets/dynamic-blog.png";
 import portfolioImg from "../assets/portfolio.png";
 import groceryImg from "../assets/grocery.png";
+import spendSmartImg from "../assets/spend-smart.png";
 import SectionTitle from "./SectionTitle";
 import {
   SiNodedotjs,
@@ -21,9 +22,9 @@ import {
 
 const projects = [
   {
-    title: "Dynamic Blog",
-    image: dynamicBlogImg,
-    liveLink: "https://dynamic-blog-client.vercel.app",
+    title: "SpendSmart",
+    image: spendSmartImg,
+    liveLink: "https://spend-smart-sigma.vercel.app",
     techStack: [
       { name: "Node JS", icon: SiNodedotjs },
       { name: "Express JS", icon: SiExpress },
@@ -32,17 +33,16 @@ const projects = [
       { name: "PostgreSQL", icon: SiPostgresql },
       { name: "Prisma", icon: SiPrisma },
       { name: "Redux", icon: SiRedux },
-      { name: "Socket.io", icon: SiSocketdotio },
     ],
     description: [
-      "Developed a feature-rich blogging platform focused on competitive programming, delivering a seamless user experience with real-time interactivity and scalable architecture.",
-      "Implemented secure user registration, JWT-based authentication, and role-based access control to protect user data and manage permissions.",
-      "Built a dynamic blog editor using Quill.js, enhanced with custom image uploads to cloud storage, enabling rich, Google Docs-like blog creation for admins.",
-      "Designed a powerful admin dashboard to manage blogs, users, categories, and content with full CRUD functionality, improving content publishing efficiency.",
-      "Integrated a robust comment and threaded reply system with real-time updates via Socket.io, boosting user engagement without requiring page reloads.",
-      "Used PostgreSQL with Prisma ORM for scalable, relational data modeling and optimized query performance.",
-      "Managed global application state using Redux, ensuring responsive and predictable UI behavior across components.",
-      "Resulted in a highly interactive, admin-friendly CMS tailored for tech content, with improved writing experience and real-time collaboration features.",
+      "Developed a personal finance and expense tracking application to manage income and expenses with category-wise classification.",
+      "Implemented secure authentication with protected routes and user-specific financial data isolation.",
+      "Built a comprehensive analytics dashboard featuring pie charts, category breakdowns, and trend-based financial insights.",
+      "Enabled real-time CRUD operations for transactions, allowing users to track, update, and analyze spending patterns efficiently.",
+      "Designed financial summaries including total income, expenses, savings, and category-wise distribution.",
+      "Used PostgreSQL with Prisma ORM for relational data modeling and optimized query performance.",
+      "Managed global application state using Redux for consistent and predictable UI behavior.",
+      "Delivered a clean, responsive UI optimized for usability, performance, and accessibility.",
     ],
   },
   {
@@ -59,14 +59,39 @@ const projects = [
       { name: "Redux", icon: SiRedux },
     ],
     description: [
-      "Developed a full-featured eCommerce platform for managing grocery products using Next.js, Node.js, Redux, and MySQL.",
-      "Implemented secure JWT-based authentication with user and admin roles for protected route access and data control.",
-      "Built a dynamic admin dashboard to manage categories, products, offers, and orders with complete CRUD functionality.",
-      "Integrated cart and order management features with real-time updates for smooth user experience.",
-      "Designed a promotional offer system and product story highlights to increase engagement and conversion rates.",
-      "Used MySQL with Prisma ORM for relational data modeling, ensuring performance and data consistency.",
-      "Managed global application state using Redux for efficient and scalable front-end data flow.",
-      "Delivered a scalable platform with a clean UI and seamless functionality tailored for grocery product workflows.",
+      "Developed a full-stack eCommerce platform for grocery products using Next.js, Node.js, Redux, and MySQL.",
+      "Implemented JWT-based authentication with user and admin role-based access control for protected routes.",
+      "Built an admin dashboard to manage products, categories, offers, and orders with complete CRUD functionality.",
+      "Implemented cart and order management workflows with real-time UI updates for a smooth user experience.",
+      "Designed promotional offers and product story highlights to improve user engagement and conversion rates.",
+      "Used MySQL with Prisma ORM to ensure relational data consistency and performance.",
+      "Managed global application state with Redux for scalable front-end data flow.",
+      "Delivered a responsive, scalable platform optimized for eCommerce workflows.",
+    ],
+  },
+  {
+    title: "Dynamic Blog",
+    image: dynamicBlogImg,
+    liveLink: "https://dynamic-blog-client.vercel.app",
+    techStack: [
+      { name: "Node JS", icon: SiNodedotjs },
+      { name: "Express JS", icon: SiExpress },
+      { name: "Next JS", icon: SiNextdotjs },
+      { name: "Tailwind CSS", icon: SiTailwindcss },
+      { name: "PostgreSQL", icon: SiPostgresql },
+      { name: "Prisma", icon: SiPrisma },
+      { name: "Redux", icon: SiRedux },
+      { name: "Socket.io", icon: SiSocketdotio },
+    ],
+    description: [
+      "Developed a feature-rich blogging platform focused on competitive programming with real-time interactivity.",
+      "Implemented JWT-based authentication and role-based access control to secure user accounts and content.",
+      "Built a rich-text editor using Quill.js with custom image upload functionality for blog creation.",
+      "Designed an admin dashboard to manage blogs, users, categories, and comments with full CRUD operations.",
+      "Integrated real-time threaded comments and replies using Socket.io to enhance user engagement.",
+      "Used PostgreSQL and Prisma ORM for scalable relational data modeling and optimized database queries.",
+      "Managed global application state using Redux for consistent UI behavior across components.",
+      "Delivered an admin-friendly CMS optimized for performance, scalability, and real-time collaboration.",
     ],
   },
   {
@@ -76,15 +101,15 @@ const projects = [
     techStack: [
       { name: "React", icon: SiReact },
       { name: "JavaScript", icon: SiJavascript },
-      { name: "Typescript", icon: SiTypescript },
+      { name: "TypeScript", icon: SiTypescript },
       { name: "Tailwind CSS", icon: SiTailwindcss },
     ],
     description: [
       "Designed and developed a fully responsive personal portfolio website.",
-      "Showcases key projects, professional skills, achievements, and contact information.",
-      "Optimized for SEO and performance to ensure fast loading times and improved visibility.",
-      "Built with mobile-first principles and accessible, semantic markup.",
-      "Implemented contact form functionality using email.js to enable seamless email sending.",
+      "Showcases key projects, professional experience, skills, and achievements.",
+      "Optimized for SEO and performance to ensure fast load times and better visibility.",
+      "Built with mobile-first principles using accessible and semantic HTML.",
+      "Integrated a contact form using EmailJS for seamless communication.",
     ],
   },
 ];
