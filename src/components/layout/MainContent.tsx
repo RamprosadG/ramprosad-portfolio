@@ -1,15 +1,15 @@
 import React from "react";
-import About from "./About";
-import Skills from "./Skills";
-import Experiences from "./Experiences";
-import Projects from "./Projects";
-import ProgrammignContest from "./ProgrammingContest";
-import Contact from "./Contact";
-import ProblemSolving from "./ProblemSolving";
-import Education from "./Education";
-import Profile from "./Profile";
-import Services from "./Services";
-import Interests from "./Interests";
+import About from "../about/About";
+import Skills from "../resume/Skills";
+import Experiences from "../resume/Experiences";
+import Projects from "../projects/Projects";
+import ProgrammignContest from "../achievements/ProgrammingContest";
+import Contact from "../contact/Contact";
+import ProblemSolving from "../achievements/ProblemSolving";
+import Education from "../resume/Education";
+import Profile from "../shared/Profile";
+import Services from "../about/Services";
+import Interests from "../about/Interests";
 
 const MainContent: React.FC = () => {
   return (

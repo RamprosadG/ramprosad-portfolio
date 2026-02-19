@@ -1,10 +1,10 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
-import dynamicBlogImg from "../assets/dynamic-blog.png";
-import portfolioImg from "../assets/portfolio.png";
-import groceryImg from "../assets/grocery.png";
-import spendSmartImg from "../assets/spend-smart.png";
-import SectionTitle from "./SectionTitle";
+import dynamicBlogImg from "../../assets/images/projects/dynamic-blog.png";
+import portfolioImg from "../../assets/images/projects/portfolio.png";
+import groceryImg from "../../assets/images/projects/grocery.png";
+import spendSmartImg from "../../assets/images/projects/spend-smart.png";
+import SectionTitle from "../shared/SectionTitle";
 import {
   SiNodedotjs,
   SiExpress,

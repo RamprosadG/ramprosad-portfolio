@@ -5,9 +5,9 @@ import {
   emailServiceId,
   emailTemplateId,
   emailPublicKey,
-} from "../configs/dotenv";
-import SocialLinks from "./SocialLinks";
-import SectionTitle from "./SectionTitle";
+} from "../../configs/dotenv";
+import SocialLinks from "../shared/SocialLinks";
+import SectionTitle from "../shared/SectionTitle";
 
 type FormData = {
   email: string;

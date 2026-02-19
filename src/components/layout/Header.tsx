@@ -1,6 +1,6 @@
 import React from "react";
-import { navigationItems } from "../static/navigationItems";
-import ProfileImage from "../assets/Ramprosad.jpg";
+import { navigationItems } from "../../static/navigationItems";
+import ProfileImage from "../../assets/images/profile/Ramprosad.jpg";
 
 const Header: React.FC = () => {
   return (

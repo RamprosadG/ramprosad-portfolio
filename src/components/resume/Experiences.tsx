@@ -41,7 +41,7 @@ const experiences: Experience[] = [
 ];
 
 import { MdArrowRight } from "react-icons/md";
-import SectionTitle from "./SectionTitle";
+import SectionTitle from "../shared/SectionTitle";
 
 const Experiences: React.FC = () => {
   return (

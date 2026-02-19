@@ -1,6 +1,6 @@
 import React from "react";
-import SectionTitle from "./SectionTitle";
-import { FaTrophy, FaMedal } from "react-icons/fa"; // ✅ Import icons
+import SectionTitle from "../shared/SectionTitle";
+import { FaTrophy, FaMedal } from "react-icons/fa";
 import type { IconType } from "react-icons";
 
 type Achievement = {

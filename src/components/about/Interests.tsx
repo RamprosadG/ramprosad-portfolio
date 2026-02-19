@@ -1,5 +1,5 @@
 import React from "react";
-import SectionTitle from "./SectionTitle";
+import SectionTitle from "../shared/SectionTitle";
 import {
   FaCode,
   FaGithub,
@@ -63,6 +63,5 @@ const Interests: React.FC = () => {
     </div>
   );
 };
-
 
 export default Interests;

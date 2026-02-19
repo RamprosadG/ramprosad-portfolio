@@ -1,11 +1,11 @@
 import React from "react";
-import codeforcesImage from "../assets/Codeforces.jpg";
-import codechefImage from "../assets/Codechef.png";
-import atcoderImg from "../assets/Atcoder.png";
-import leetcodeImage from "../assets/LeetCode.png";
-import stopTalkImage from "../assets/Stopstalk.png";
-import tophImage from "../assets/toph.png";
-import SectionTitle from "./SectionTitle";
+import codeforcesImage from "../../assets/images/platforms/Codeforces.jpg";
+import codechefImage from "../../assets/images/platforms/Codechef.png";
+import atcoderImg from "../../assets/images/platforms/Atcoder.png";
+import leetcodeImage from "../../assets/images/platforms/LeetCode.png";
+import stopTalkImage from "../../assets/images/platforms/Stopstalk.png";
+import tophImage from "../../assets/images/platforms/toph.png";
+import SectionTitle from "../shared/SectionTitle";
 
 const problemData = [
   {

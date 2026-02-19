@@ -1,5 +1,5 @@
 import React from "react";
-import SectionTitle from "./SectionTitle";
+import SectionTitle from "../shared/SectionTitle";
 import { FaNodeJs, FaHtml5 } from "react-icons/fa";
 import { GrCloudSoftware, GrHostMaintenance } from "react-icons/gr";
 import type { IconType } from "react-icons";
@@ -65,6 +65,5 @@ const Services: React.FC = () => {
     </div>
   );
 };
-
 
 export default Services;

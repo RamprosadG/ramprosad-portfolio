@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import resume from "../assets/Resume_Ramprosad_Gharami.pdf";
-import ProfileImage from "../assets/Ramprosad.jpg";
+import ProfileImage from "../../assets/images/profile/Ramprosad.jpg";
 import SocialLinks from "./SocialLinks";
+import { generateResumePdf } from "../../utils/generateResumePdf";
 import { MdFileDownload } from "react-icons/md";
 import { FaPaperPlane } from "react-icons/fa";
 
@@ -65,14 +65,13 @@ const Profile: React.FC = () => {
       </div>
       <div className="w-full mt-6">
         <div className="flex md:flex-col lg:flex-row gap-2 md:gap:4 w-full">
-          <a
-            href={resume}
-            download
-            className="group w-full text-center text-sm bg-cyan-600 hover:bg-cyan-700 text-white py-2 rounded-lg transition flex items-center justify-center gap-1 md:gap-2"
+          <button
+            onClick={generateResumePdf}
+            className="group w-full text-center text-sm bg-cyan-600 hover:bg-cyan-700 text-white py-2 rounded-lg transition flex items-center justify-center gap-1 md:gap-2 cursor-pointer"
           >
             <span>Download Resume</span>
             <MdFileDownload className="group-hover:animate-bounce h-4 w-4" />
-          </a>
+          </button>
           <a
             href="#contact"
             className="group w-full text-center text-sm bg-cyan-600 hover:bg-cyan-700 text-white py-2 rounded-lg transition flex items-center justify-center gap-1 md:gap-2"
