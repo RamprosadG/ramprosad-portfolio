@@ -3,7 +3,17 @@ import ProjectCard from "./ProjectCard";
 import dynamicBlogImg from "../../assets/images/projects/dynamic-blog.png";
 import portfolioImg from "../../assets/images/projects/portfolio.png";
 import groceryImg from "../../assets/images/projects/grocery.png";
-import spendSmartImg from "../../assets/images/projects/spend-smart.png";
+// SpendSmart Images
+import ssHome from "../../assets/images/projects/spend-smart/home.png";
+import ssDashboard from "../../assets/images/projects/spend-smart/dashboard.png";
+import ssLogin from "../../assets/images/projects/spend-smart/login.png";
+import ssRegister from "../../assets/images/projects/spend-smart/register.png";
+import ssExpense from "../../assets/images/projects/spend-smart/expense.png";
+import ssIncome from "../../assets/images/projects/spend-smart/income.png";
+import ssCategory from "../../assets/images/projects/spend-smart/category.png";
+import ssTransaction from "../../assets/images/projects/spend-smart/transaction.png";
+import ssStatistics from "../../assets/images/projects/spend-smart/statistics.png";
+import ssUser from "../../assets/images/projects/spend-smart/user.png";
 import SectionTitle from "../shared/SectionTitle";
 import {
   SiNodedotjs,
@@ -20,10 +30,24 @@ import {
   SiSocketdotio,
 } from "react-icons/si";
 
+const projectImages = [groceryImg, dynamicBlogImg, portfolioImg];
+const spendSmartImages = [
+  ssHome,
+  ssRegister,
+  ssLogin,
+  ssDashboard,
+  ssCategory,
+  ssIncome,
+  ssExpense,
+  ssTransaction,
+  ssStatistics,
+  ssUser,
+];
+
 const projects = [
   {
     title: "SpendSmart",
-    image: spendSmartImg,
+    images: spendSmartImages,
     liveLink: "https://spend-smart-sigma.vercel.app",
     techStack: [
       { name: "Node JS", icon: SiNodedotjs },
@@ -47,7 +71,7 @@ const projects = [
   },
   {
     title: "Grocery Website",
-    image: groceryImg,
+    images: projectImages,
     liveLink: "https://grocery-client-five.vercel.app",
     techStack: [
       { name: "Node JS", icon: SiNodedotjs },
@@ -71,7 +95,7 @@ const projects = [
   },
   {
     title: "Dynamic Blog",
-    image: dynamicBlogImg,
+    images: projectImages,
     liveLink: "https://dynamic-blog-client.vercel.app",
     techStack: [
       { name: "Node JS", icon: SiNodedotjs },
@@ -96,7 +120,7 @@ const projects = [
   },
   {
     title: "Portfolio",
-    image: portfolioImg,
+    images: projectImages,
     liveLink: "https://ramprosad-portfolio.vercel.app",
     techStack: [
       { name: "React", icon: SiReact },
