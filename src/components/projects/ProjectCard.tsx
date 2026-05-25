@@ -69,17 +69,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <HiChevronRight />
         </div>
 
-        {/* Indicators */}
-        <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
-          {images.map((_, index) => (
-            <div
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`transition-all w-2 h-2 bg-white rounded-full cursor-pointer ${currentIndex === index ? "p-1 px-3" : "bg-opacity-50"
-                }`}
-            />
-          ))}
-        </div>
+      </div>
+      {/* Indicators */}
+      <div className="flex justify-center gap-2 py-3 bg-gray-900/40 border-b border-gray-700">
+        {images.map((_, index) => (
+          <div
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            className={`transition-all w-2 h-2 rounded-full cursor-pointer ${currentIndex === index
+              ? "bg-amber-400 w-6"
+              : "bg-gray-500 hover:bg-gray-300"
+              }`}
+          />
+        ))}
       </div>
 
       <div className="p-6 space-y-4">

@@ -14,6 +14,18 @@ import ssCategory from "../../assets/images/projects/spend-smart/category.png";
 import ssTransaction from "../../assets/images/projects/spend-smart/transaction.png";
 import ssStatistics from "../../assets/images/projects/spend-smart/statistics.png";
 import ssUser from "../../assets/images/projects/spend-smart/user.png";
+// Dynamic Blog Images
+import dbAdminBlog from "../../assets/images/projects/dynamic-blog/admin_blog.png";
+import dbBlog from "../../assets/images/projects/dynamic-blog/blog.png";
+import dbBlogCreate from "../../assets/images/projects/dynamic-blog/blog_create.png";
+import dbCategory from "../../assets/images/projects/dynamic-blog/category.png";
+import dbCategoryCreate from "../../assets/images/projects/dynamic-blog/category_create.png";
+import dbDashboard from "../../assets/images/projects/dynamic-blog/dashboard.png";
+import dbHome from "../../assets/images/projects/dynamic-blog/home.png";
+import dbLogin from "../../assets/images/projects/dynamic-blog/login.png";
+import dbRegister from "../../assets/images/projects/dynamic-blog/register.png";
+import dbUser from "../../assets/images/projects/dynamic-blog/user.png";
+
 import SectionTitle from "../shared/SectionTitle";
 import {
   SiNodedotjs,
@@ -43,6 +55,19 @@ const spendSmartImages = [
   ssStatistics,
   ssUser,
 ];
+const dynamicBlogImages = [
+  dbHome,
+  dbBlog,
+  dbRegister,
+  dbLogin,
+  dbDashboard,
+  dbCategory,
+  dbCategoryCreate,
+  dbAdminBlog,
+  dbBlogCreate,
+  dbUser,
+];
+
 
 const projects = [
   {
@@ -95,7 +120,8 @@ const projects = [
   },
   {
     title: "Dynamic Blog",
-    images: projectImages,
+    images: dynamicBlogImages,
+
     liveLink: "https://dynamic-blog-client.vercel.app",
     techStack: [
       { name: "Node JS", icon: SiNodedotjs },
