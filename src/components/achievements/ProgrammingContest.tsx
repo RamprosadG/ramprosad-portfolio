@@ -1,5 +1,7 @@
 import React from "react";
+import { motion } from "framer-motion";
 import SectionTitle from "../shared/SectionTitle";
+
 import { FaTrophy, FaMedal } from "react-icons/fa";
 import type { IconType } from "react-icons";
 
@@ -60,8 +62,13 @@ const ProgrammignContest: React.FC = () => {
           const Icon = item.icon;
 
           return (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}
+
               className="bg-gray-800 text-gray-200 p-6 rounded-2xl shadow-md border border-white/10 backdrop-blur-sm transition duration-300 hover:shadow-lg"
             >
               <div className="flex flex-col items-center gap-2 mb-4">
@@ -76,7 +83,7 @@ const ProgrammignContest: React.FC = () => {
               <p className="text-sm">
                 <span>Rank:</span> {item.rank}
               </p>
-            </div>
+            </motion.div>
           );
         })}
       </div>

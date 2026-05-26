@@ -1,9 +1,33 @@
 import React from "react";
+import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
+
 import dynamicBlogImg from "../../assets/images/projects/dynamic-blog.png";
 import portfolioImg from "../../assets/images/projects/portfolio.png";
 import groceryImg from "../../assets/images/projects/grocery.png";
-import spendSmartImg from "../../assets/images/projects/spend-smart.png";
+// SpendSmart Images
+import ssHome from "../../assets/images/projects/spend-smart/home.png";
+import ssDashboard from "../../assets/images/projects/spend-smart/dashboard.png";
+import ssLogin from "../../assets/images/projects/spend-smart/login.png";
+import ssRegister from "../../assets/images/projects/spend-smart/register.png";
+import ssExpense from "../../assets/images/projects/spend-smart/expense.png";
+import ssIncome from "../../assets/images/projects/spend-smart/income.png";
+import ssCategory from "../../assets/images/projects/spend-smart/category.png";
+import ssTransaction from "../../assets/images/projects/spend-smart/transaction.png";
+import ssStatistics from "../../assets/images/projects/spend-smart/statistics.png";
+import ssUser from "../../assets/images/projects/spend-smart/user.png";
+// Dynamic Blog Images
+import dbAdminBlog from "../../assets/images/projects/dynamic-blog/admin_blog.png";
+import dbBlog from "../../assets/images/projects/dynamic-blog/blog.png";
+import dbBlogCreate from "../../assets/images/projects/dynamic-blog/blog_create.png";
+import dbCategory from "../../assets/images/projects/dynamic-blog/category.png";
+import dbCategoryCreate from "../../assets/images/projects/dynamic-blog/category_create.png";
+import dbDashboard from "../../assets/images/projects/dynamic-blog/dashboard.png";
+import dbHome from "../../assets/images/projects/dynamic-blog/home.png";
+import dbLogin from "../../assets/images/projects/dynamic-blog/login.png";
+import dbRegister from "../../assets/images/projects/dynamic-blog/register.png";
+import dbUser from "../../assets/images/projects/dynamic-blog/user.png";
+
 import SectionTitle from "../shared/SectionTitle";
 import {
   SiNodedotjs,
@@ -20,10 +44,37 @@ import {
   SiSocketdotio,
 } from "react-icons/si";
 
+const projectImages = [groceryImg, dynamicBlogImg, portfolioImg];
+const spendSmartImages = [
+  ssHome,
+  ssRegister,
+  ssLogin,
+  ssDashboard,
+  ssCategory,
+  ssIncome,
+  ssExpense,
+  ssTransaction,
+  ssStatistics,
+  ssUser,
+];
+const dynamicBlogImages = [
+  dbHome,
+  dbBlog,
+  dbRegister,
+  dbLogin,
+  dbDashboard,
+  dbCategory,
+  dbCategoryCreate,
+  dbAdminBlog,
+  dbBlogCreate,
+  dbUser,
+];
+
+
 const projects = [
   {
     title: "SpendSmart",
-    image: spendSmartImg,
+    images: spendSmartImages,
     liveLink: "https://spend-smart-sigma.vercel.app",
     techStack: [
       { name: "Node JS", icon: SiNodedotjs },
@@ -47,7 +98,7 @@ const projects = [
   },
   {
     title: "Grocery Website",
-    image: groceryImg,
+    images: projectImages,
     liveLink: "https://grocery-client-five.vercel.app",
     techStack: [
       { name: "Node JS", icon: SiNodedotjs },
@@ -71,7 +122,8 @@ const projects = [
   },
   {
     title: "Dynamic Blog",
-    image: dynamicBlogImg,
+    images: dynamicBlogImages,
+
     liveLink: "https://dynamic-blog-client.vercel.app",
     techStack: [
       { name: "Node JS", icon: SiNodedotjs },
@@ -96,7 +148,7 @@ const projects = [
   },
   {
     title: "Portfolio",
-    image: portfolioImg,
+    images: projectImages,
     liveLink: "https://ramprosad-portfolio.vercel.app",
     techStack: [
       { name: "React", icon: SiReact },
@@ -120,8 +172,17 @@ const Projects: React.FC = () => {
       <SectionTitle title="Projects" />
       <div className="grid grid-cols-1 gap-8">
         {projects?.map((project, idx) => (
-          <ProjectCard key={idx} {...project} />
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, x: idx % 2 === 0 ? -100 : 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: idx * 0.1, ease: "easeOut" }}
+          >
+            <ProjectCard {...project} />
+          </motion.div>
         ))}
+
       </div>
     </div>
   );

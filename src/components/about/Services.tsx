@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "framer-motion";
+
 import SectionTitle from "../shared/SectionTitle";
 import { FaNodeJs, FaHtml5 } from "react-icons/fa";
 import { GrCloudSoftware, GrHostMaintenance } from "react-icons/gr";
@@ -45,9 +47,14 @@ const Services: React.FC = () => {
         {services.map((service, index) => {
           const Icon = service.icon;
           return (
-            <div
+            <motion.div
               key={index}
-              className="bg-gray-800 text-gray-200 p-4 md:p-6 rounded-xl shadow-lg backdrop-blur-sm border border-white/10 transition"
+              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}
+
+              className="bg-gray-800 text-gray-200 p-4 md:p-6 rounded-xl shadow-lg backdrop-blur-sm border border-white/10"
             >
               {/* Icon and Title Row */}
               <div className="flex items-center justify-center mb-4 text-amber-300 gap-2">
@@ -58,7 +65,7 @@ const Services: React.FC = () => {
               </div>
               {/* Description */}
               <p className="text-sm text-justify">{service.description}</p>
-            </div>
+            </motion.div>
           );
         })}
       </div>
