@@ -1,5 +1,7 @@
 import React from "react";
+import { motion } from "framer-motion";
 import SectionTitle from "../shared/SectionTitle";
+
 import {
   FaCode,
   FaGithub,
@@ -50,13 +52,18 @@ const Interests: React.FC = () => {
         {interests.map((interest, index) => {
           const Icon = interest.icon;
           return (
-            <div
+            <motion.div
               key={index}
-              className="bg-gray-800 text-white px-6 py-6 rounded-xl shadow-lg backdrop-blur-sm border border-white/10 text-sm flex flex-col items-center justify-center gap-2"
+              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}
+
+              className="bg-gray-800 text-white px-6 py-6 rounded-xl shadow-lg backdrop-blur-sm border border-white/10 text-sm flex flex-col items-center justify-center gap-2 hover:border-amber-400/50 transition-colors"
             >
               <Icon className="text-4xl text-amber-300" />
               <span className="text-sm text-center">{interest.title}</span>
-            </div>
+            </motion.div>
           );
         })}
       </div>

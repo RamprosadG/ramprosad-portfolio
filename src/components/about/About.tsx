@@ -1,9 +1,16 @@
 import React from "react";
 import SectionTitle from "../shared/SectionTitle";
+import { motion } from "framer-motion";
 
 const About: React.FC = () => {
   return (
-    <div className="w-full text-white">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="w-full text-white"
+    >
       <SectionTitle title="About Me" />
       <p className="text-gray-200 leading-relaxed text-justify">
         Hello! I'm Ramprosad Gharami — a Software Engineer and Competitive
@@ -21,8 +28,9 @@ const About: React.FC = () => {
         always open to collaborating on impactful and technically challenging
         projects. Let's build something amazing together!
       </p>
-    </div>
+    </motion.div>
   );
 };
+
 
 export default About;

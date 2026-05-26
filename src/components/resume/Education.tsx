@@ -1,9 +1,16 @@
 import React from "react";
 import SectionTitle from "../shared/SectionTitle";
+import { motion } from "framer-motion";
 
 const Education: React.FC = () => {
   return (
-    <div className="text-white w-full">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="text-white w-full"
+    >
       <SectionTitle title="Education" />
 
       <div className="bg-secondary rounded-xl shadow-md">
@@ -15,8 +22,9 @@ const Education: React.FC = () => {
         </div>
         <div className="text-gray-300">Jan 2015 – Dec 2021</div>
       </div>
-    </div>
+    </motion.div>
   );
 };
+
 
 export default Education;

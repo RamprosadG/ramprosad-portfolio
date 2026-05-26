@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import type { IconType } from "react-icons";
+
 import { MdArrowRight } from "react-icons/md";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
@@ -71,7 +73,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
       </div>
       {/* Indicators */}
-      <div className="flex justify-center gap-2 py-3 bg-gray-900/40 border-b border-gray-700">
+      <div className="flex justify-center gap-2 py-2 bg-gray-900/40 border-b border-gray-700">
         {images.map((_, index) => (
           <div
             key={index}
@@ -99,18 +101,25 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           </a>
         </div>
 
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm text-gray-300 italic">
+        <ul className="grid grid-cols-1 gap-y-2 text-sm text-gray-300">
           {description?.map((item, i) => (
-            <li key={i} className="flex items-start">
+            <motion.li
+              key={i}
+              initial={{ opacity: 0, x: -10 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.1 + 0.5 }}
+              className="flex items-start"
+            >
               <MdArrowRight className="text-amber-400 text-lg shrink-0 mt-0.5" />
               <span className="leading-relaxed">{item}</span>
-            </li>
+            </motion.li>
           ))}
         </ul>
 
         <div className="pt-4 border-t border-gray-700 flex flex-wrap items-center gap-3">
-          <span className="text-sm font-bold text-gray-400 uppercase tracking-wider">
-            Tech Deployed:
+          <span className="text-sm font-bold text-white tracking-wider">
+            Tech Stack:
           </span>
           <div className="flex flex-wrap gap-2">
             {techStack.map((tech, index) => {

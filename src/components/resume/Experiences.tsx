@@ -40,6 +40,7 @@ const experiences: Experience[] = [
   },
 ];
 
+import { motion } from "framer-motion";
 import { MdArrowRight } from "react-icons/md";
 import SectionTitle from "../shared/SectionTitle";
 
@@ -50,8 +51,12 @@ const Experiences: React.FC = () => {
 
       <div className="flex flex-col gap-8">
         {experiences.map((exp, idx) => (
-          <div
+          <motion.div
             key={idx}
+            initial={{ opacity: 0, x: idx % 2 === 0 ? -100 : 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: idx * 0.1, ease: "easeOut" }}
             className={`relative bg-gray-800 shadow-sm rounded-lg p-6 border-l-4 ${
               exp.current ? "border-amber-300" : "border-gray-300"
             } hover:shadow-md transition`}
@@ -70,17 +75,26 @@ const Experiences: React.FC = () => {
             </div>
             <ul className="space-y-2 text-gray-200 text-sm">
               {exp.experiences?.map((item, i) => (
-                <li key={i} className="flex items-start">
+                <motion.li
+                  key={i}
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.1 + 0.5 }}
+                  className="flex items-start"
+                >
                   <MdArrowRight className="text-inherit text-lg shrink-0 p-0 m-0" />
                   <span>{item}</span>
-                </li>
+                </motion.li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         ))}
+
       </div>
     </div>
   );
 };
+
 
 export default Experiences;

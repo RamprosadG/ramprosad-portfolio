@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "framer-motion";
+
 import codeforcesImage from "../../assets/images/platforms/Codeforces.jpg";
 import codechefImage from "../../assets/images/platforms/Codechef.png";
 import atcoderImg from "../../assets/images/platforms/Atcoder.png";
@@ -77,11 +79,14 @@ const ProblemSolving: React.FC = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {problemData?.map((platform, idx) => (
-          <div
+          <motion.div
             key={idx}
+            initial={{ opacity: 0, x: idx % 2 === 0 ? -100 : 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: idx * 0.1, ease: "easeOut" }}
+
             className="bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden"
-            data-aos="fade-up"
-            data-aos-delay={100 * (idx + 1)}
           >
             <img
               src={platform.image}
@@ -130,7 +135,7 @@ const ProblemSolving: React.FC = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

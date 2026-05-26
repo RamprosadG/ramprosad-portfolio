@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+
 import ProfileImage from "../../assets/images/profile/Ramprosad.jpg";
 import SocialLinks from "./SocialLinks";
 import { generateResumePdf } from "../../utils/generateResumePdf";
@@ -44,7 +46,12 @@ const Profile: React.FC = () => {
   }, [charIndex, isDeleting, index]);
 
   return (
-    <div className="text-white w-full">
+    <motion.div
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8 }}
+      className="text-white w-full"
+    >
       {/* Profile Header */}
       <div className="flex flex-col items-center">
         <img
@@ -81,7 +88,7 @@ const Profile: React.FC = () => {
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

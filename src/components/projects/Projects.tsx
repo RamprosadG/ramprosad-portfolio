@@ -1,5 +1,7 @@
 import React from "react";
+import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
+
 import dynamicBlogImg from "../../assets/images/projects/dynamic-blog.png";
 import portfolioImg from "../../assets/images/projects/portfolio.png";
 import groceryImg from "../../assets/images/projects/grocery.png";
@@ -170,8 +172,17 @@ const Projects: React.FC = () => {
       <SectionTitle title="Projects" />
       <div className="grid grid-cols-1 gap-8">
         {projects?.map((project, idx) => (
-          <ProjectCard key={idx} {...project} />
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, x: idx % 2 === 0 ? -100 : 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: idx * 0.1, ease: "easeOut" }}
+          >
+            <ProjectCard {...project} />
+          </motion.div>
         ))}
+
       </div>
     </div>
   );

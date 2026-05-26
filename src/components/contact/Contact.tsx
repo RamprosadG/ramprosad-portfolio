@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
 import {
   emailServiceId,
   emailTemplateId,
@@ -38,12 +39,25 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="w-full text-white">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      className="w-full text-white"
+    >
       <SectionTitle title="Contact Me" />
 
       <div className="bg-gray-800 p-6 rounded-lg flex flex-col gap-10">
         {/* Form Section */}
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 w-full">
+        <motion.form
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          onSubmit={handleSubmit(onSubmit)}
+          className="space-y-6 w-full"
+        >
           <div className="flex w-full flex-col md:flex-row justify-between gap-4">
             {/* Email */}
             <div className="w-full">
@@ -136,20 +150,34 @@ const Contact: React.FC = () => {
               Message sent!
             </div>
           )}
-        </form>
+        </motion.form>
 
         {/* Social Icons */}
-        <SocialLinks />
+        <motion.div
+           initial={{ opacity: 0, y: 20 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true }}
+           transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <SocialLinks />
+        </motion.div>
 
         {/* Contact Info */}
-        <div className="w-full text-center space-y-1">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="w-full text-center space-y-1"
+        >
           <p className="text-white">Email: ram.bsmrstu@gmail.com</p>
           <p className="text-white">Phone: +8801768157889, +8801568984650</p>
           <p className="text-white">Address: Madaripur, Dhaka, Bangladesh</p>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
+
 
 export default Contact;

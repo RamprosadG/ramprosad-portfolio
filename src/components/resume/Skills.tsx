@@ -1,5 +1,7 @@
 import React from "react";
+import { motion } from "framer-motion";
 import SectionTitle from "../shared/SectionTitle";
+
 import {
   FaCode,
   FaTools,
@@ -131,13 +133,17 @@ const Skills: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {skillsData.map((section, idx) => {
           return (
-            <div
+            <motion.div
               key={idx}
+              initial={{ opacity: 0, x: idx % 2 === 0 ? -50 : 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: idx * 0.1, ease: "easeOut" }}
+
               className="bg-gray-800 rounded-lg shadow-sm p-6 hover:shadow-md transition"
             >
               {/* Category Header */}
               <div className="flex items-center justify-center text-amber-300 gap-2 mb-6">
-                {/* <CategoryIcon className="text-lg md:text-xl" /> */}
                 <h4 className="text-xl md:text-2xl font-medium">
                   {section.category}
                 </h4>
@@ -148,19 +154,26 @@ const Skills: React.FC = () => {
                 {section.items.map((item, index) => {
                   const SkillIcon = item.icon;
                   return (
-                    <li
+                    <motion.li
                       key={index}
-                      className="bg-gray-700 text-gray-200 text-sm py-3 rounded-lg flex flex-col items-center justify-center gap-2"
+                      initial={{ opacity: 0, scale: 0.5 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        duration: 0.3,
+                        delay: idx * 0.1 + index * 0.05,
+                      }}
+                      className="bg-gray-700 text-gray-200 text-sm py-3 rounded-lg flex flex-col items-center justify-center gap-2 hover:bg-gray-600 transition-colors"
                     >
                       <SkillIcon className="text-4xl text-amber-300" />
                       <span className="text-xs text-center px-2">
                         {item.name}
                       </span>
-                    </li>
+                    </motion.li>
                   );
                 })}
               </ul>
-            </div>
+            </motion.div>
           );
         })}
       </div>
