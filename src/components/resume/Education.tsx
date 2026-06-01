@@ -11,7 +11,7 @@ const Education: React.FC = () => {
       transition={{ duration: 0.6 }}
       className="text-white w-full"
     >
-      <SectionTitle title="Education" />
+      <SectionTitle title="Education" direction="right" />
 
       <div className="bg-secondary rounded-xl shadow-md">
         <div className="text-white text-lg font-semibold">

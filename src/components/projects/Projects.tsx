@@ -169,7 +169,7 @@ const projects = [
 const Projects: React.FC = () => {
   return (
     <div className="w-full text-white">
-      <SectionTitle title="Projects" />
+      <SectionTitle title="Projects" direction="left" />
       <div className="grid grid-cols-1 gap-8">
         {projects?.map((project, idx) => (
           <motion.div

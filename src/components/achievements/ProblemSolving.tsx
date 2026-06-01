@@ -75,7 +75,7 @@ const problemData = [
 const ProblemSolving: React.FC = () => {
   return (
     <div className="w-full text-white">
-      <SectionTitle title="Problem Solving" />
+      <SectionTitle title="Problem Solving" direction="right" />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {problemData?.map((platform, idx) => (

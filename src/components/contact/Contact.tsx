@@ -46,7 +46,7 @@ const Contact: React.FC = () => {
       transition={{ duration: 0.8 }}
       className="w-full text-white"
     >
-      <SectionTitle title="Contact Me" />
+      <SectionTitle title="Contact Me" direction="right" />
 
       <div className="bg-gray-800 p-6 rounded-lg flex flex-col gap-10">
         {/* Form Section */}

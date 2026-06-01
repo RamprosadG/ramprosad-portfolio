@@ -11,7 +11,7 @@ const About: React.FC = () => {
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="w-full text-white"
     >
-      <SectionTitle title="About Me" />
+      <SectionTitle title="About Me" direction="left" />
       <p className="text-gray-200 leading-relaxed text-justify">
         Hello! I'm Ramprosad Gharami — a Software Engineer and Competitive
         Programmer with a B.Sc. in Computer Science and Engineering from

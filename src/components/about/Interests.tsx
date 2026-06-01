@@ -47,7 +47,7 @@ const interests: Interest[] = [
 const Interests: React.FC = () => {
   return (
     <div className="w-full text-white">
-      <SectionTitle title="Interests" />
+      <SectionTitle title="Interests" direction="left" />
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
         {interests.map((interest, index) => {
           const Icon = interest.icon;

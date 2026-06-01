@@ -128,7 +128,7 @@ const skillsData: SkillCategory[] = [
 const Skills: React.FC = () => {
   return (
     <div className="text-white w-full">
-      <SectionTitle title="Skills" />
+      <SectionTitle title="Skills" direction="right" />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {skillsData.map((section, idx) => {

@@ -55,7 +55,7 @@ const achievements: Achievement[] = [
 const ProgrammignContest: React.FC = () => {
   return (
     <div className="text-white w-full">
-      <SectionTitle title="Programming Contests" />
+      <SectionTitle title="Programming Contests" direction="left" />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {achievements.map((item, index) => {

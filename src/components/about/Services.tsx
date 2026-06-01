@@ -42,7 +42,7 @@ const services: Service[] = [
 const Services: React.FC = () => {
   return (
     <div className="w-full text-white">
-      <SectionTitle title="Services" />
+      <SectionTitle title="Services" direction="right" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {services.map((service, index) => {
           const Icon = service.icon;
