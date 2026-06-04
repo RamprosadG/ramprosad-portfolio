@@ -137,10 +137,10 @@ const Skills: React.FC = () => {
               key={idx}
               initial={{ opacity: 0, x: idx % 2 === 0 ? -50 : 50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: idx * 0.1, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
 
-              className="bg-gray-800 rounded-lg shadow-sm p-6 hover:shadow-md transition"
+              className="bg-gray-800 rounded-lg shadow-sm p-6 hover:shadow-md"
             >
               {/* Category Header */}
               <div className="flex items-center justify-center text-amber-300 gap-2 mb-6">
@@ -160,7 +160,7 @@ const Skills: React.FC = () => {
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                       transition={{
-                        duration: 0.3,
+                        duration: 0.8,
                         delay: idx * 0.1 + index * 0.05,
                       }}
                       className="bg-gray-700 text-gray-200 text-sm py-3 rounded-lg flex flex-col items-center justify-center gap-2 hover:bg-gray-600 transition-colors"

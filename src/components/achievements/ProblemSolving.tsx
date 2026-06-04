@@ -83,10 +83,10 @@ const ProblemSolving: React.FC = () => {
             key={idx}
             initial={{ opacity: 0, x: idx % 2 === 0 ? -50 : 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: idx * 0.1, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
 
-            className="bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden"
+            className="bg-gray-800 rounded-xl shadow-md hover:shadow-lg overflow-hidden"
           >
             <img
               src={platform.image}

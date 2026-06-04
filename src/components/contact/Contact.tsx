@@ -51,10 +51,10 @@ const Contact: React.FC = () => {
       <div className="bg-gray-800 p-6 rounded-lg flex flex-col gap-10">
         {/* Form Section */}
         <motion.form
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           onSubmit={handleSubmit(onSubmit)}
           className="space-y-6 w-full"
         >
@@ -154,10 +154,10 @@ const Contact: React.FC = () => {
 
         {/* Social Icons */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <SocialLinks />
         </motion.div>
