@@ -53,13 +53,12 @@ const Experiences: React.FC = () => {
         {experiences.map((exp, idx) => (
           <motion.div
             key={idx}
-            initial={{ opacity: 0, x: idx % 2 === 0 ? -100 : 100 }}
+            initial={{ opacity: 0, x: idx % 2 === 0 ? -50 : 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: idx * 0.1, ease: "easeOut" }}
-            className={`relative bg-gray-800 shadow-sm rounded-lg p-6 border-l-4 ${
-              exp.current ? "border-amber-300" : "border-gray-300"
-            } hover:shadow-md transition`}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className={`relative bg-gray-800 shadow-sm rounded-lg p-6 border-l-4 ${exp.current ? "border-amber-300" : "border-gray-300"
+              } hover:shadow-md`}
           >
             <div className="absolute top-5 left-[-10px] w-4 h-4 bg-cyan-700 rounded-full border-2 border-gray-900 shadow" />
             <div className="mb-2">

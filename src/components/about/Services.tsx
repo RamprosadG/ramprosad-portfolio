@@ -52,7 +52,7 @@ const Services: React.FC = () => {
               initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
 
               className="bg-gray-800 text-gray-200 p-4 md:p-6 rounded-xl shadow-lg backdrop-blur-sm border border-white/10"
             >

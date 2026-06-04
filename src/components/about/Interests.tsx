@@ -57,7 +57,7 @@ const Interests: React.FC = () => {
               initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
 
               className="bg-gray-800 text-white px-6 py-6 rounded-xl shadow-lg backdrop-blur-sm border border-white/10 text-sm flex flex-col items-center justify-center gap-2 hover:border-amber-400/50 transition-colors"
             >

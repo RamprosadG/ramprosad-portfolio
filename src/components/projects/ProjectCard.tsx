@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import type { IconType } from "react-icons";
 
 import { MdArrowRight } from "react-icons/md";
@@ -25,16 +25,24 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
 
   const prevSlide = () => {
+    setDirection(-1);
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide ? images.length - 1 : currentIndex - 1;
     setCurrentIndex(newIndex);
   };
 
   const nextSlide = () => {
+    setDirection(1);
     const isLastSlide = currentIndex === images.length - 1;
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const paginate = (newIndex: number) => {
+    setDirection(newIndex > currentIndex ? 1 : -1);
     setCurrentIndex(newIndex);
   };
 
@@ -45,20 +53,49 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     return () => clearInterval(interval);
   }, [currentIndex]);
 
+  const variants = {
+    enter: (direction: number) => ({
+      x: direction > 0 ? "100%" : "-100%",
+      opacity: 0,
+    }),
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1,
+    },
+    exit: (direction: number) => ({
+      zIndex: 0,
+      x: direction < 0 ? "100%" : "-100%",
+      opacity: 0,
+    }),
+  };
+
   return (
     <div className="w-full bg-gray-800 shadow-xl rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-700">
       {/* Image Carousel */}
-      <div className="relative group w-full h-[300px] sm:h-[400px] bg-gray-900/50">
-        <img
-          src={images[currentIndex]}
-          alt={title}
-          className="w-full h-full object-contain transition-all duration-500 ease-in-out"
-        />
+      <div className="relative group w-full h-[300px] sm:h-[400px] bg-gray-900/50 overflow-hidden">
+        <AnimatePresence initial={false} custom={direction}>
+          <motion.img
+            key={currentIndex}
+            src={images[currentIndex]}
+            alt={title}
+            custom={direction}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{
+              x: { type: "spring", stiffness: 300, damping: 30 },
+              opacity: { duration: 0.2 },
+            }}
+            className="absolute w-full h-full object-contain"
+          />
+        </AnimatePresence>
 
         {/* Left Arrow */}
         <div
           onClick={prevSlide}
-          className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/50 text-white cursor-pointer hover:bg-black/70 transition"
+          className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/50 text-white cursor-pointer hover:bg-black/70 transition z-10"
         >
           <HiChevronLeft />
         </div>
@@ -66,7 +103,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         {/* Right Arrow */}
         <div
           onClick={nextSlide}
-          className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/50 text-white cursor-pointer hover:bg-black/70 transition"
+          className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/50 text-white cursor-pointer hover:bg-black/70 transition z-10"
         >
           <HiChevronRight />
         </div>
@@ -77,7 +114,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         {images.map((_, index) => (
           <div
             key={index}
-            onClick={() => setCurrentIndex(index)}
+            onClick={() => paginate(index)}
             className={`transition-all w-2 h-2 rounded-full cursor-pointer ${currentIndex === index
               ? "bg-amber-400 w-6"
               : "bg-gray-500 hover:bg-gray-300"
