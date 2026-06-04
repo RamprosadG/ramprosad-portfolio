@@ -71,7 +71,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   };
 
   return (
-    <div className="w-full bg-gray-800 shadow-xl rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-700">
+    <div className="w-full bg-gray-800 shadow-xl rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-white/10 hover:border-amber-400/50 transition-colors">
       {/* Image Carousel */}
       <div className="relative group w-full h-[300px] sm:h-[400px] bg-gray-900/50 overflow-hidden">
         <AnimatePresence initial={false} custom={direction}>

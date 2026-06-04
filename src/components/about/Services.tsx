@@ -54,12 +54,12 @@ const Services: React.FC = () => {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.8, ease: "easeOut" }}
 
-              className="bg-gray-800 text-gray-200 p-4 md:p-6 rounded-xl shadow-lg backdrop-blur-sm border border-white/10"
+              className="bg-gray-800 text-gray-200 p-4 md:p-6 rounded-xl shadow-lg backdrop-blur-sm border border-white/10 hover:border-amber-400/50 transition-colors"
             >
               {/* Icon and Title Row */}
               <div className="flex items-center justify-center mb-4 text-amber-300 gap-2">
-                <Icon className="text-xl md:text-2xl" />
-                <h4 className="text-xl md:text-2xl font-semibold">
+                <Icon className="text-lg md:text-xl" />
+                <h4 className="text-lg md:text-xl font-semibold">
                   {service.title}
                 </h4>
               </div>

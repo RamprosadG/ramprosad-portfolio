@@ -48,132 +48,141 @@ const Contact: React.FC = () => {
     >
       <SectionTitle title="Contact Me" />
 
-      <div className="bg-gray-800 p-6 rounded-lg flex flex-col gap-10">
-        {/* Form Section */}
-        <motion.form
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          onSubmit={handleSubmit(onSubmit)}
-          className="space-y-6 w-full"
-        >
-          <div className="flex w-full flex-col md:flex-row justify-between gap-4">
-            {/* Email */}
-            <div className="w-full">
-              <label
-                htmlFor="email"
-                className="block mb-2 text-sm font-medium text-white"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                {...register("email", {
-                  required: "Email is required",
-                  pattern: {
-                    value: /^[^@]+@[^@]+\.[^@]+$/,
-                    message: "Invalid email",
-                  },
-                })}
-                className="w-full px-4 py-3 border border-cyan-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-700"
-                placeholder="Enter your email"
-              />
-              {errors.email && (
-                <p className="text-red-500 text-sm mt-1">
-                  {errors.email.message}
-                </p>
-              )}
-            </div>
-
-            {/* Subject */}
-            <div className="w-full">
-              <label
-                htmlFor="subject"
-                className="block mb-2 text-sm font-medium text-white"
-              >
-                Subject
-              </label>
-              <input
-                type="text"
-                id="subject"
-                {...register("subject", {
-                  required: "Subject is required",
-                })}
-                className="w-full px-4 py-3 border border-cyan-700 rounded-md bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-700"
-                placeholder="Enter subject"
-              />
-              {errors.subject && (
-                <p className="text-red-500 text-sm mt-1">
-                  {errors.subject.message}
-                </p>
-              )}
-            </div>
-          </div>
-
-          {/* Message */}
-          <div className="w-full">
-            <label
-              htmlFor="message"
-              className="block mb-2 text-sm font-medium text-white"
-            >
-              Message
-            </label>
-            <textarea
-              id="message"
-              rows={5}
-              {...register("message", {
-                required: "Message is required",
-              })}
-              className="w-full px-4 py-3 border border-cyan-700 rounded-md bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-700"
-              placeholder="Write your message..."
-            ></textarea>
-            {errors.message && (
-              <p className="text-red-500 text-sm mt-1">
-                {errors.message.message}
-              </p>
-            )}
-          </div>
-
-          {/* Submit */}
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="mt-4 px-6 py-2 cursor-pointer bg-cyan-600 text-white rounded hover:bg-cyan-700 transition w-full justify-center flex items-center gap-2"
+      <div className="relative overflow-hidden rounded-lg p-[2px]">
+        <div
+          className="absolute top-1/2 left-1/2 w-[3000px] h-[3000px] -translate-x-1/2 -translate-y-1/2 animate-spin"
+          style={{
+            animationDuration: '8s',
+            background: 'conic-gradient(from 0deg, transparent 0%, transparent 35%, #f59e0b 50%, transparent 50%, transparent 85%, #f59e0b 100%)'
+          }}
+        />
+        <div className="relative bg-gray-800 p-6 rounded-lg flex flex-col gap-10 h-full w-full">
+          {/* Form Section */}
+          <motion.form
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            onSubmit={handleSubmit(onSubmit)}
+            className="space-y-6 w-full"
           >
-            {isSubmitting ? "Sending..." : "Send Message"}
-          </button>
+            <div className="flex w-full flex-col md:flex-row justify-between gap-4">
+              {/* Email */}
+              <div className="w-full">
+                <label
+                  htmlFor="email"
+                  className="block mb-2 text-sm font-medium text-white"
+                >
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  {...register("email", {
+                    required: "Email is required",
+                    pattern: {
+                      value: /^[^@]+@[^@]+\.[^@]+$/,
+                      message: "Invalid email",
+                    },
+                  })}
+                  className="w-full px-4 py-3 border border-white/10 hover:border-amber-400/50 transition-colors rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400/50"
+                  placeholder="Enter your email"
+                />
+                {errors.email && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.email.message}
+                  </p>
+                )}
+              </div>
 
-          {toastVisible && (
-            <div className="fixed bottom-5 right-5 bg-cyan-600 text-white px-4 py-2 rounded shadow-lg">
-              Message sent!
+              {/* Subject */}
+              <div className="w-full">
+                <label
+                  htmlFor="subject"
+                  className="block mb-2 text-sm font-medium text-white"
+                >
+                  Subject
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  {...register("subject", {
+                    required: "Subject is required",
+                  })}
+                  className="w-full px-4 py-3 border border-white/10 hover:border-amber-400/50 transition-colors rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400/50"
+                  placeholder="Enter subject"
+                />
+                {errors.subject && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.subject.message}
+                  </p>
+                )}
+              </div>
             </div>
-          )}
-        </motion.form>
 
-        {/* Social Icons */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          <SocialLinks />
-        </motion.div>
+            {/* Message */}
+            <div className="w-full">
+              <label
+                htmlFor="message"
+                className="block mb-2 text-sm font-medium text-white"
+              >
+                Message
+              </label>
+              <textarea
+                id="message"
+                rows={5}
+                {...register("message", {
+                  required: "Message is required",
+                })}
+                className="w-full px-4 py-3 border border-white/10 hover:border-amber-400/50 transition-colors rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400/50"
+                placeholder="Write your message..."
+              ></textarea>
+              {errors.message && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.message.message}
+                </p>
+              )}
+            </div>
 
-        {/* Contact Info */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="w-full text-center space-y-1"
-        >
-          <p className="text-white">Email: ram.bsmrstu@gmail.com</p>
-          <p className="text-white">Phone: +8801768157889, +8801568984650</p>
-          <p className="text-white">Address: Madaripur, Dhaka, Bangladesh</p>
-        </motion.div>
+            {/* Submit */}
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="mt-4 px-6 py-2 cursor-pointer bg-amber-400 text-black rounded hover:bg-amber-500 transition w-full justify-center flex items-center gap-2"
+            >
+              {isSubmitting ? "Sending..." : "Send Message"}
+            </button>
+
+            {toastVisible && (
+              <div className="fixed bottom-5 right-5 bg-amber-400 text-white px-4 py-2 rounded shadow-lg">
+                Message sent!
+              </div>
+            )}
+          </motion.form>
+
+          {/* Social Icons */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <SocialLinks />
+          </motion.div>
+
+          {/* Contact Info */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="w-full text-center space-y-1"
+          >
+            <p className="text-white">Email: ram.bsmrstu@gmail.com</p>
+            <p className="text-white">Phone: +8801768157889, +8801568984650</p>
+            <p className="text-white">Address: Madaripur, Dhaka, Bangladesh</p>
+          </motion.div>
+        </div>
       </div>
     </motion.div>
   );
