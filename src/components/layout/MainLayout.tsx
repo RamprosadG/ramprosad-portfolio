@@ -3,11 +3,13 @@ import Header from "./Header";
 import MainContent from "./MainContent";
 import Footer from "./Footer";
 import Sidebar from "./Sidebar";
+import RainfallBackground from "./RainfallBackground";
 
 const MainLayout: React.FC = () => {
   return (
-    <div className="bg-[#161616] font-sans text-white">
-      <div className="w-full max-w-[1200px] mx-auto flex">
+    <div className="bg-[#161616] font-sans text-white relative min-h-screen">
+      <RainfallBackground />
+      <div className="w-full max-w-[1200px] mx-auto flex relative z-10">
         {/* Left Sidebar */}
         <aside className="hidden md:block w-1/3 bg-[#21212b] h-screen overflow-y-auto sticky top-0">
           <div className="p-4">
