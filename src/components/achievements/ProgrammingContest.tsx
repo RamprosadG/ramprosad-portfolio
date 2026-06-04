@@ -69,7 +69,7 @@ const ProgrammignContest: React.FC = () => {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.8, ease: "easeOut" }}
 
-              className="bg-gray-800 text-gray-200 p-6 rounded-2xl shadow-md border border-white/10 backdrop-blur-sm hover:shadow-lg"
+              className="bg-gray-800 text-gray-200 p-6 rounded-2xl shadow-md border border-white/10 backdrop-blur-sm hover:shadow-lg border border-white/10 hover:border-amber-400/50 transition-colors"
             >
               <div className="flex flex-col items-center gap-2 mb-4">
                 <Icon className="text-4xl text-amber-400" />

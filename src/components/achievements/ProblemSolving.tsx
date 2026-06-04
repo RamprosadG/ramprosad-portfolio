@@ -86,7 +86,7 @@ const ProblemSolving: React.FC = () => {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
 
-            className="bg-gray-800 rounded-xl shadow-md hover:shadow-lg overflow-hidden"
+            className="bg-gray-800 rounded-xl shadow-md hover:shadow-lg overflow-hidden border border-white/10 hover:border-amber-400/50 transition-colors"
           >
             <img
               src={platform.image}

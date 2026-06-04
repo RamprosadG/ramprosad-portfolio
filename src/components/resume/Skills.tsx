@@ -140,11 +140,11 @@ const Skills: React.FC = () => {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.8, ease: "easeOut" }}
 
-              className="bg-gray-800 rounded-lg shadow-sm p-6 hover:shadow-md"
+              className="bg-gray-800 rounded-lg shadow-sm p-6 hover:shadow-md border border-white/10 hover:border-amber-400/50 transition-colors"
             >
               {/* Category Header */}
               <div className="flex items-center justify-center text-amber-300 gap-2 mb-6">
-                <h4 className="text-xl md:text-2xl font-medium">
+                <h4 className="text-lg md:text-xl font-medium">
                   {section.category}
                 </h4>
               </div>
@@ -163,7 +163,7 @@ const Skills: React.FC = () => {
                         duration: 0.8,
                         delay: idx * 0.1 + index * 0.05,
                       }}
-                      className="bg-gray-700 text-gray-200 text-sm py-3 rounded-lg flex flex-col items-center justify-center gap-2 hover:bg-gray-600 transition-colors"
+                      className="bg-gray-700 text-gray-200 text-sm py-3 rounded-lg flex flex-col items-center justify-center gap-2 hover:bg-gray-600 border border-white/10 hover:border-amber-400/50 transition-colors"
                     >
                       <SkillIcon className="text-4xl text-amber-300" />
                       <span className="text-xs text-center px-2">
