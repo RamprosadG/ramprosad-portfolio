@@ -3,15 +3,12 @@ import { motion } from "framer-motion";
 
 interface SectionTitleProps {
   title: string;
-  direction?: "left" | "right";
 }
 
-const SectionTitle: React.FC<SectionTitleProps> = ({ title, direction = "left" }) => {
-  const xOffset = direction === "left" ? -100 : 100;
-
+const SectionTitle: React.FC<SectionTitleProps> = ({ title }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, x: xOffset }}
+      initial={{ opacity: 0, x: 100 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.8, ease: "easeOut" }}

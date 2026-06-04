@@ -5,13 +5,13 @@ import { motion } from "framer-motion";
 const About: React.FC = () => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="w-full text-white"
     >
-      <SectionTitle title="About Me" direction="left" />
+      <SectionTitle title="About Me" />
       <p className="text-gray-200 leading-relaxed text-justify">
         Hello! I'm Ramprosad Gharami — a Software Engineer and Competitive
         Programmer with a B.Sc. in Computer Science and Engineering from

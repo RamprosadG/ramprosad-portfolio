@@ -75,13 +75,13 @@ const problemData = [
 const ProblemSolving: React.FC = () => {
   return (
     <div className="w-full text-white">
-      <SectionTitle title="Problem Solving" direction="right" />
+      <SectionTitle title="Problem Solving" />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {problemData?.map((platform, idx) => (
           <motion.div
             key={idx}
-            initial={{ opacity: 0, x: idx % 2 === 0 ? -100 : 100 }}
+            initial={{ opacity: 0, x: idx % 2 === 0 ? -50 : 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: idx * 0.1, ease: "easeOut" }}

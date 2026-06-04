@@ -55,7 +55,7 @@ const achievements: Achievement[] = [
 const ProgrammignContest: React.FC = () => {
   return (
     <div className="text-white w-full">
-      <SectionTitle title="Programming Contests" direction="left" />
+      <SectionTitle title="Programming Contests" />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {achievements.map((item, index) => {
@@ -64,7 +64,7 @@ const ProgrammignContest: React.FC = () => {
           return (
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}

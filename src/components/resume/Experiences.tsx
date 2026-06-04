@@ -47,7 +47,7 @@ import SectionTitle from "../shared/SectionTitle";
 const Experiences: React.FC = () => {
   return (
     <div className="w-full text-white">
-      <SectionTitle title="Working Experiences" direction="left" />
+      <SectionTitle title="Working Experiences" />
 
       <div className="flex flex-col gap-8">
         {experiences.map((exp, idx) => (

@@ -46,7 +46,7 @@ const Contact: React.FC = () => {
       transition={{ duration: 0.8 }}
       className="w-full text-white"
     >
-      <SectionTitle title="Contact Me" direction="right" />
+      <SectionTitle title="Contact Me" />
 
       <div className="bg-gray-800 p-6 rounded-lg flex flex-col gap-10">
         {/* Form Section */}
@@ -154,10 +154,10 @@ const Contact: React.FC = () => {
 
         {/* Social Icons */}
         <motion.div
-           initial={{ opacity: 0, y: 20 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: true }}
-           transition={{ duration: 0.6, delay: 0.4 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
         >
           <SocialLinks />
         </motion.div>

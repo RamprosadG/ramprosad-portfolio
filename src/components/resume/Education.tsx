@@ -11,7 +11,7 @@ const Education: React.FC = () => {
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="text-white w-full"
     >
-      <SectionTitle title="Education" direction="right" />
+      <SectionTitle title="Education" />
 
       <div className="bg-secondary rounded-xl shadow-md">
         <div className="text-white text-lg font-semibold">
