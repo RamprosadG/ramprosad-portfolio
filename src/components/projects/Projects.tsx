@@ -2,31 +2,61 @@ import React from "react";
 import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 
-import dynamicBlogImg from "../../assets/images/projects/dynamic-blog.png";
-import portfolioImg from "../../assets/images/projects/portfolio.png";
-import groceryImg from "../../assets/images/projects/grocery.png";
 // SpendSmart Images
 import ssHome from "../../assets/images/projects/spend-smart/home.png";
 import ssDashboard from "../../assets/images/projects/spend-smart/dashboard.png";
 import ssLogin from "../../assets/images/projects/spend-smart/login.png";
 import ssRegister from "../../assets/images/projects/spend-smart/register.png";
+import ssAdminRegister from "../../assets/images/projects/spend-smart/admin-register.png";
 import ssExpense from "../../assets/images/projects/spend-smart/expense.png";
+import ssExpenseDetails from "../../assets/images/projects/spend-smart/expense-details.png";
 import ssIncome from "../../assets/images/projects/spend-smart/income.png";
+import ssIncomeDetails from "../../assets/images/projects/spend-smart/income-details.png";
 import ssCategory from "../../assets/images/projects/spend-smart/category.png";
+import ssCreateCategory from "../../assets/images/projects/spend-smart/create-category.png";
 import ssTransaction from "../../assets/images/projects/spend-smart/transaction.png";
+import ssTransactionDetails from "../../assets/images/projects/spend-smart/transaction-details.png";
+import ssCreateTransaction from "../../assets/images/projects/spend-smart/create-transaction.png";
+import ssCreateExpense from "../../assets/images/projects/spend-smart/create-expense.png";
+import ssCreateIncome from "../../assets/images/projects/spend-smart/create-income.png";
+import ssCreateUser from "../../assets/images/projects/spend-smart/create-user.png";
+import ssCompany from "../../assets/images/projects/spend-smart/company.png";
+import ssCreateCompany from "../../assets/images/projects/spend-smart/create-company.png";
 import ssStatistics from "../../assets/images/projects/spend-smart/statistics.png";
+import ssProfile from "../../assets/images/projects/spend-smart/profile.png";
 import ssUser from "../../assets/images/projects/spend-smart/user.png";
 // Dynamic Blog Images
-import dbAdminBlog from "../../assets/images/projects/dynamic-blog/admin_blog.png";
-import dbBlog from "../../assets/images/projects/dynamic-blog/blog.png";
-import dbBlogCreate from "../../assets/images/projects/dynamic-blog/blog_create.png";
-import dbCategory from "../../assets/images/projects/dynamic-blog/category.png";
-import dbCategoryCreate from "../../assets/images/projects/dynamic-blog/category_create.png";
-import dbDashboard from "../../assets/images/projects/dynamic-blog/dashboard.png";
 import dbHome from "../../assets/images/projects/dynamic-blog/home.png";
+import dbHomeLoggedin from "../../assets/images/projects/dynamic-blog/home-loggedin.png";
 import dbLogin from "../../assets/images/projects/dynamic-blog/login.png";
 import dbRegister from "../../assets/images/projects/dynamic-blog/register.png";
-import dbUser from "../../assets/images/projects/dynamic-blog/user.png";
+import dbBlogDetails from "../../assets/images/projects/dynamic-blog/blog-details.png";
+import dbAdminDashboard from "../../assets/images/projects/dynamic-blog/admin-dashboard.png";
+import dbAdminBlog from "../../assets/images/projects/dynamic-blog/admin-blog.png";
+import dbCreateBlog from "../../assets/images/projects/dynamic-blog/create-blog.png";
+import dbAdminCategory from "../../assets/images/projects/dynamic-blog/admin-category.png";
+import dbCreateCategory from "../../assets/images/projects/dynamic-blog/create-category.png";
+import dbAdminUser from "../../assets/images/projects/dynamic-blog/admin-user.png";
+import dbCreateUser from "../../assets/images/projects/dynamic-blog/create-user.png";
+import dbAdminCompany from "../../assets/images/projects/dynamic-blog/admin-company.png";
+import dbCreateCompany from "../../assets/images/projects/dynamic-blog/create-company.png";
+import dbAdminRegister from "../../assets/images/projects/dynamic-blog/admin-register.png";
+import dbProfile from "../../assets/images/projects/dynamic-blog/profile.png";
+// Grocery Website Images
+import gwGrocery from "../../assets/images/projects/gorcery-website/grocery.png";
+import gwSpendSmart from "../../assets/images/projects/gorcery-website/spend-smart.png";
+import gwDynamicBlog from "../../assets/images/projects/gorcery-website/dynamic-blog.png";
+import gwPortfolio from "../../assets/images/projects/gorcery-website/portfolio.png";
+// Portfolio Images
+import pfAbout from "../../assets/images/projects/portfolio/about.png";
+import pfContact from "../../assets/images/projects/portfolio/contact.png";
+import pfContest from "../../assets/images/projects/portfolio/contest.png";
+import pfExperience from "../../assets/images/projects/portfolio/experience.png";
+import pfInterest from "../../assets/images/projects/portfolio/interest.png";
+import pfProblemSolving from "../../assets/images/projects/portfolio/problem-solving.png";
+import pfProject from "../../assets/images/projects/portfolio/project.png";
+import pfService from "../../assets/images/projects/portfolio/service.png";
+import pfSkill from "../../assets/images/projects/portfolio/skill.png";
 
 import SectionTitle from "../shared/SectionTitle";
 import {
@@ -44,30 +74,59 @@ import {
   SiSocketdotio,
 } from "react-icons/si";
 
-const projectImages = [groceryImg, dynamicBlogImg, portfolioImg];
 const spendSmartImages = [
   ssHome,
   ssRegister,
+  ssAdminRegister,
   ssLogin,
+  ssProfile,
   ssDashboard,
   ssCategory,
+  ssCreateCategory,
   ssIncome,
+  ssCreateIncome,
+  ssIncomeDetails,
   ssExpense,
+  ssCreateExpense,
+  ssExpenseDetails,
   ssTransaction,
+  ssCreateTransaction,
+  ssTransactionDetails,
   ssStatistics,
   ssUser,
+  ssCreateUser,
+  ssCompany,
+  ssCreateCompany,
 ];
 const dynamicBlogImages = [
   dbHome,
-  dbBlog,
   dbRegister,
+  dbAdminRegister,
   dbLogin,
-  dbDashboard,
-  dbCategory,
-  dbCategoryCreate,
+  dbHomeLoggedin,
+  dbProfile,
+  dbBlogDetails,
+  dbAdminDashboard,
+  dbAdminCategory,
+  dbCreateCategory,
   dbAdminBlog,
-  dbBlogCreate,
-  dbUser,
+  dbCreateBlog,
+  dbAdminUser,
+  dbCreateUser,
+  dbAdminCompany,
+  dbCreateCompany,
+];
+const groceryImages = [gwGrocery, gwSpendSmart, gwDynamicBlog, gwPortfolio];
+const portfolioImages = [
+  pfAbout,
+  pfService,
+  pfInterest,
+  pfSkill,
+  pfExperience,
+  pfProject,
+  pfProblemSolving,
+  pfContest,
+  pfContact,
 ];
 
 
@@ -98,7 +157,7 @@ const projects = [
   },
   {
     title: "Grocery Website",
-    images: projectImages,
+    images: groceryImages,
     liveLink: "https://grocery-client-five.vercel.app",
     techStack: [
       { name: "Node JS", icon: SiNodedotjs },
@@ -148,7 +207,7 @@ const projects = [
   },
   {
     title: "Portfolio",
-    images: projectImages,
+    images: portfolioImages,
     liveLink: "https://ramprosad-portfolio.vercel.app",
     techStack: [
       { name: "React", icon: SiReact },
