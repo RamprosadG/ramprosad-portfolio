@@ -122,14 +122,14 @@ export const resumeData: ResumeData = {
       tech: "Node.js, Express.js, Postgres, Prisma | Next.js, Redux, Tailwind CSS",
     },
     {
-      name: "Grocery — E-Commerce Website",
-      link: "https://grocery-client-five.vercel.app",
+      name: "ERP with E-Commerce Platform",
+      link: "",
       bullets: [
-        "Full-stack ecommerce platform with product listing, cart, and order management.",
-        "Implemented **JWT authentication** with user and admin role-based access.",
-        "Real-time cart updates and order workflows.",
+        "Developed a full-stack ERP with integrated eCommerce for inventory, sales, purchases, accounting, and online orders.",
+        "Implemented JWT authentication with role-based access control for secure multi-user operations.",
+        "Built real-time inventory synchronization, order processing, and accounting workflows across ERP and eCommerce.",
       ],
-      tech: "Node.js, Express.js, Next.js, Redux, Tailwind CSS, MySQL, Prisma",
+      tech: "Node.js, Nest.js, Next.js, Redux, Tanstak Query, Tailwind CSS, PostgreSQL, Prisma",
     },
     {
       name: "Dynamic Blog — Blog Website",
