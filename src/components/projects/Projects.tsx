@@ -66,7 +66,6 @@ import {
   SiTailwindcss,
   SiPostgresql,
   SiPrisma,
-  SiMysql,
   SiReact,
   SiJavascript,
   SiTypescript,
